@@ -76,9 +76,11 @@
                 <p style="font-size:13px;color:var(--muted);margin-top:8px">Demostración breve del ejercicio diario</p>
               </div>
               <button type="button" id="reflex-dot" class="reflex-target" hidden>Tocar</button>
-              <div id="reflex-done" hidden>
-                <strong id="reflex-res-title" style="font-size:18px;color:var(--ink);display:block;margin-bottom:4px"></strong>
-                <p id="reflex-res-text" style="font-size:14px;color:var(--muted);margin-bottom:12px"></p>
+              <div id="reflex-done" hidden style="width:100%">
+                <div id="reflex-badge" class="sim-state s-verde" style="padding:12px 14px;margin-bottom:10px;text-align:left">
+                  <strong id="reflex-res-title" style="font-size:17px;display:block;margin-bottom:2px"></strong>
+                  <p id="reflex-res-text" style="font-size:14px;margin:0"></p>
+                </div>
                 <button type="button" id="reflex-retry" class="btn btn-primary" style="min-height:38px;font-size:14px">Volver a realizar la prueba</button>
               </div>
             </div>
@@ -130,6 +132,7 @@
     $("st-hits").textContent = "0 / 3";
     $("st-ms").textContent = "...";
     $("st-status").textContent = "Midiendo";
+    $("st-status").style.color = "var(--ink)";
     $("reflex-intro").hidden = true;
     $("reflex-done").hidden = true;
     $("reflex-dot").hidden = false;
@@ -143,6 +146,7 @@
     hits++;
     $("st-hits").textContent = hits + " / 3";
     var avg = Math.round(times.reduce(function(a,b){return a+b;},0)/times.length);
+    var maxDt = Math.max.apply(null, times);
     $("st-ms").textContent = avg + " ms";
     if (hits < 3) {
       mover();
@@ -151,9 +155,26 @@
       $("reflex-dot").hidden = true;
       $("reflex-dot").style.display = "none";
       $("reflex-done").hidden = false;
-      $("st-status").textContent = "Normal";
-      $("reflex-res-title").textContent = "Prueba completada · Promedio: " + avg + " ms";
-      $("reflex-res-text").textContent = "En la aplicación, este resultado se compara con la base personal del trabajador y avisa a su jefatura si requiere atención.";
+
+      if (avg <= 650 && maxDt <= 900) {
+        $("reflex-badge").className = "sim-state s-verde";
+        $("st-status").textContent = "● Normal";
+        $("st-status").style.color = "var(--ok)";
+        $("reflex-res-title").textContent = "● Resultado Normal (" + avg + " ms)";
+        $("reflex-res-text").textContent = "Respuestas rápidas y parejas. El trabajador se encuentra en su rango habitual para iniciar el turno.";
+      } else if (avg <= 1150 && maxDt <= 1600) {
+        $("reflex-badge").className = "sim-state s-amarillo";
+        $("st-status").textContent = "▲ Fatiga moderada";
+        $("st-status").style.color = "#b7791f";
+        $("reflex-res-title").textContent = "▲ Cansancio moderado (" + avg + " ms)";
+        $("reflex-res-text").textContent = "Hubo demoras en la respuesta (toque más lento: " + maxDt + " ms). Se envía aviso preventivo al supervisor para conversar en terreno.";
+      } else {
+        $("reflex-badge").className = "sim-state s-rojo";
+        $("st-status").textContent = "■ Fatiga severa";
+        $("st-status").style.color = "#c4242a";
+        $("reflex-res-title").textContent = "■ Cansancio severo (" + avg + " ms)";
+        $("reflex-res-text").textContent = "Respuesta muy lenta (pico de " + maxDt + " ms). Se activa alerta prioritaria para dar una pausa de descanso antes de operar.";
+      }
     }
   });
   $("reflex-retry").addEventListener("click", function(){
