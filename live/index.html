@@ -79,7 +79,7 @@
               <div id="reflex-done" hidden>
                 <strong id="reflex-res-title" style="font-size:18px;color:var(--ink);display:block;margin-bottom:4px"></strong>
                 <p id="reflex-res-text" style="font-size:14px;color:var(--muted);margin-bottom:12px"></p>
-                <button type="button" id="reflex-retry" class="btn btn-secondary" style="min-height:36px;font-size:14px">Repetir prueba</button>
+                <button type="button" id="reflex-retry" class="btn btn-primary" style="min-height:38px;font-size:14px">Volver a realizar la prueba</button>
               </div>
             </div>
             <div class="reflex-stats">
@@ -115,7 +115,7 @@
 <script>
 (function(){
   var $ = function(id){ return document.getElementById(id); };
-  var hits = 0, times = [], t0 = 0;
+  var hits = 0, times = [], t0 = 0, active = false;
   var pos = [{top:"22px",left:"28px"},{top:"92px",left:"64%"},{top:"36px",left:"40%"}];
   function mover(){
     var dot = $("reflex-dot");
@@ -126,16 +126,18 @@
     t0 = performance.now();
   }
   $("reflex-start").addEventListener("click", function(){
-    hits = 0; times = [];
+    hits = 0; times = []; active = true;
     $("st-hits").textContent = "0 / 3";
     $("st-ms").textContent = "...";
     $("st-status").textContent = "Midiendo";
     $("reflex-intro").hidden = true;
     $("reflex-done").hidden = true;
     $("reflex-dot").hidden = false;
+    $("reflex-dot").style.display = "flex";
     mover();
   });
   $("reflex-dot").addEventListener("click", function(){
+    if (!active || hits >= 3) return;
     var dt = Math.round(performance.now() - t0);
     times.push(dt);
     hits++;
@@ -145,10 +147,12 @@
     if (hits < 3) {
       mover();
     } else {
+      active = false;
       $("reflex-dot").hidden = true;
+      $("reflex-dot").style.display = "none";
       $("reflex-done").hidden = false;
       $("st-status").textContent = "Normal";
-      $("reflex-res-title").textContent = "Tiempo promedio: " + avg + " ms";
+      $("reflex-res-title").textContent = "Prueba completada · Promedio: " + avg + " ms";
       $("reflex-res-text").textContent = "En la aplicación, este resultado se compara con la base personal del trabajador y avisa a su jefatura si requiere atención.";
     }
   });
