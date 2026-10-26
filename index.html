@@ -4,22 +4,21 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NUVYRA · Gestión preventiva y operacional</title>
-<meta name="description" content="NUVYRA conecta la información preventiva con la gestión operacional: seguimiento de situaciones, responsables asignados y decisiones con información trazable.">
+<title>NUVYRA · Cuidado preventivo y apoyo en terreno</title>
+<meta name="description" content="NUVYRA ayuda a detectar el cansancio antes de iniciar el turno para cuidar la salud de las personas y acompañarlas en terreno con medidas reales de prevención.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="estilos.css">
-<!-- BOCETO de diseño (fase 2). No forma parte de la aplicación. Datos de pantallas: ejemplo, no reales. -->
 </head>
 <body>
-<div class="preview-bar" role="note">Versión de revisión: boceto de diseño del sitio de NUVYRA. Los datos y pantallas son de ejemplo y el ingreso no funciona.</div>
+<div class="preview-bar" role="note">Sitio en revisión de NUVYRA · Las pantallas contienen datos de ejemplo para mostrar cómo funciona el acompañamiento preventivo.</div>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="mark" viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="10.4" fill="none" stroke="currentColor" stroke-width="1.9"/>
     <path d="M8.1 16.6V7.6L15.9 16.6V10.6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="15.9" cy="7.2" r="2.2" fill="#1d5fbf"/>
+    <circle cx="15.9" cy="7.2" r="2.2" fill="#1b5ec4"/>
   </symbol>
-  <symbol id="tick" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="#1d5fbf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="tick" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="#1b5ec4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
 <header class="top">
   <div class="wrap">
@@ -32,96 +31,202 @@
   </div>
 </header>
 <main id="contenido">
+
 <section class="hero">
   <div class="wrap grid">
     <div>
-      <div class="eyebrow">Gestión preventiva y operacional</div>
-      <h1>De la alerta preventiva a la acción con responsable.</h1>
-      <p class="lead">NUVYRA conecta la información preventiva con la gestión operacional: mide cada día el desempeño cognitivo de las personas frente a su propio nivel normal, y deja registrado quién actuó, cuándo y cómo.</p>
+      <div class="eyebrow">Salud y seguridad centrada en las personas</div>
+      <h1>Cuidar al equipo antes de que el cansancio se convierta en un accidente.</h1>
+      <p class="lead">Dormir mal, un turno largo o trabajar en altura geográfica nos puede pasar a todos. NUVYRA permite detectar la fatiga en 2 minutos antes de operar, para que la jefatura pueda apoyar al trabajador con un descanso, hidratación o cambio de tarea.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="producto.html">Conocer NUVYRA</a>
-        <a class="btn btn-secondary" href="login.html">Ingresar</a>
+        <a class="btn btn-primary" href="#simulador">Probar cómo funciona ↓</a>
+        <a class="btn btn-secondary" href="producto.html">Ver pantallas reales</a>
       </div>
-      <p class="fine">Plataforma en desarrollo para empresas mineras, industriales y de servicios.</p>
+      <ul class="trust-pills" aria-label="Principios de NUVYRA">
+        <li>✓ 100% preventivo, nunca punitivo</li>
+        <li>✓ Se compara contigo mismo, no con otros</li>
+        <li>✓ Creado con especialistas en salud y minería</li>
+      </ul>
     </div>
     <figure style="margin:0">
-      <div class="frame" role="img" aria-label="Pantalla de inicio de NUVYRA con el último resultado de una persona frente a su nivel normal">
-        <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
-        <img src="img/app-inicio-alerta.webp" width="1304" height="760" alt="">
+      <div class="frame" role="img" aria-label="Pantalla actualizada de NUVYRA mostrando el acompañamiento de una persona con descanso de una hora">
+        <div class="bar" aria-hidden="true">
+          <div class="bar-dots"><i></i><i></i><i></i></div>
+          <span class="bar-title">NUVYRA · Panel de Acompañamiento Preventivo</span>
+        </div>
+        <img src="img/app-caso-resuelto.png" width="1440" height="900" alt="Pantalla real de NUVYRA donde se registra una conversación con la persona y un descanso de una hora hasta volver a su nivel normal">
       </div>
-      <figcaption class="cap">Captura de la aplicación con datos de ejemplo.</figcaption>
+      <div class="callouts" aria-label="Qué muestra esta pantalla">
+        <div class="callout"><b>1. Aviso temprano</b>Se detecta fatiga antes de iniciar una labor de riesgo.</div>
+        <div class="callout"><b>2. Apoyo humano</b>Conversación en terreno y descanso de una hora.</div>
+        <div class="callout"><b>3. Regreso seguro</b>La persona retoma cuando vuelve a su nivel normal.</div>
+      </div>
     </figure>
   </div>
 </section>
-<section id="simulador" aria-labelledby="sim-t">
+
+<section class="white" id="filosofia">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">Pruébalo</div>
-      <h2 id="sim-t">Mira qué pasa cuando alguien llega cansado.</h2>
-      <p class="lead">Elige cómo salió la evaluación de Carlos y mira, al mismo tiempo, su celular y el panel de su supervisor.</p>
+      <div class="eyebrow">Nuestra filosofía de trabajo</div>
+      <h2>Una herramienta de apoyo mutuo, jamás de persecución.</h2>
+      <p class="lead">Sabemos que en terreno existe el temor a que la tecnología se use para vigilar o sancionar. NUVYRA fue diseñada exactamente para lo contrario: proteger la vida del trabajador y dar tranquilidad a quien supervisa.</p>
     </div>
-    <div class="sim-pick" role="group" aria-label="Elige un resultado de ejemplo">
-      <button type="button" class="sim-btn" data-nivel="verde" aria-pressed="true">● Todo normal</button>
-      <button type="button" class="sim-btn" data-nivel="amarillo" aria-pressed="false">▲ Cansancio moderado</button>
-      <button type="button" class="sim-btn" data-nivel="rojo" aria-pressed="false">■ Cansancio severo</button>
+    <div class="care-compare">
+      <div class="care-box yes">
+        <span class="care-tag">✓ Lo que NUVYRA SÍ es</span>
+        <h3>Un escudo para cuidar tu salud y tu turno</h3>
+        <ul class="care-list">
+          <li><span class="ico">✓</span><span><b>Un chequeo personal de 2 minutos:</b> mide tu atención y reflejos de hoy comparados solo con tu propio ritmo habitual.</span></li>
+          <li><span class="ico">✓</span><span><b>Apoyo real cuando estás cansado:</b> si hoy dormiste mal o te afectó la altura, tu supervisor recibe un aviso para acercarse a conversar y darte una pausa de recuperación o una tarea más liviana.</span></li>
+          <li><span class="ico">✓</span><span><b>Respaldo de que nos cuidamos:</b> queda constancia de la medida de apoyo tomada para proteger tanto al trabajador como a la empresa.</span></li>
+        </ul>
+      </div>
+      <div class="care-box no">
+        <span class="care-tag">✕ Lo que NUVYRA NUNCA es</span>
+        <h3>Cero vigilancia, cero castigos</h3>
+        <ul class="care-list">
+          <li><span class="ico">✕</span><span><b>No es para sancionar ni buscar culpables:</b> sentir fatiga es una condición humana y fisiológica normal, no una falta laboral.</span></li>
+          <li><span class="ico">✕</span><span><b>No es un ranking ni competencia:</b> nadie se compara con el resto del turno; cada persona tiene su propia línea base.</span></li>
+          <li><span class="ico">✕</span><span><b>No reemplaza el criterio humano:</b> la aplicación no toma decisiones automáticas sobre las personas; siempre media una conversación en terreno.</span></li>
+        </ul>
+      </div>
     </div>
+  </div>
+</section>
+
+<section id="como-funciona">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Paso a paso</div>
+      <h2>¿Cómo funciona en el día a día de la faena?</h2>
+      <p class="lead">Un flujo simple y transparente de 4 pasos que ya está funcionando en nuestra plataforma.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="badge now"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>Paso 1</span>
+        <h3>Chequeo de 2 min</h3>
+        <p>Al iniciar la jornada, cada persona realiza en su celular un ejercicio breve de atención visual y velocidad de reacción.</p>
+        <div class="step-example"><b>En simple:</b> Como estirar antes de hacer deporte, pero para la atención.</div>
+      </div>
+      <div class="step">
+        <span class="badge now"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>Paso 2</span>
+        <h3>Tu propio ritmo</h3>
+        <p>Tras 3 días iniciales, NUVYRA conoce tu nivel habitual y compara tu resultado de hoy únicamente contigo mismo.</p>
+        <div class="step-example"><b>En simple:</b> No te compara con tus compañeros ni con promedios ajenos.</div>
+      </div>
+      <div class="step">
+        <span class="badge now"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>Paso 3</span>
+        <h3>Aviso preventivo</h3>
+        <p>Si el resultado está normal, inicias tu día tranquilo. Si hay cansancio moderado o severo, avisa de forma clara y amable.</p>
+        <div class="step-example"><b>En simple:</b> Usa íconos, formas y palabras fáciles de leer para todos.</div>
+      </div>
+      <div class="step">
+        <span class="badge now"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>Paso 4</span>
+        <h3>Apoyo en terreno</h3>
+        <p>La jefatura directa se acerca a conversar contigo para acordar una pausa de descanso, rehidratación o ajuste de tarea.</p>
+        <div class="step-example"><b>En simple:</b> Nadie opera en riesgo; primero está tu bienestar.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="white" id="simulador" aria-labelledby="sim-t">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">Simulador interactivo</div>
+      <h2 id="sim-t">Ponte en el lugar del trabajador y del supervisor.</h2>
+      <p class="lead">Haz clic en los 3 botones de abajo para ver cómo NUVYRA acompaña a <b>Carlos</b> según cómo amaneció hoy, sin juicios y priorizando su bienestar.</p>
+    </div>
+
+    <div class="sim-guide">
+      <div><strong>1. Elige cómo salió el chequeo de Carlos hoy:</strong></div>
+      <div class="sim-pick" role="group" aria-label="Elige un estado de ejemplo para simular">
+        <button type="button" class="sim-btn" data-nivel="verde" aria-pressed="true">● Descansado (Normal)</button>
+        <button type="button" class="sim-btn" data-nivel="amarillo" aria-pressed="false">▲ Cansancio moderado</button>
+        <button type="button" class="sim-btn" data-nivel="rojo" aria-pressed="false">■ Cansancio alto (Requiere pausa)</button>
+      </div>
+    </div>
+
     <div class="sim-grid">
-      <div>
-        <div class="sim-label">Celular de Carlos</div>
+      <div class="sim-col">
+        <div class="sim-label"><span>Vista en el celular de Carlos</span><span class="role-tag">Trabajador</span></div>
         <div class="phone" aria-hidden="false">
-          <div class="phone-top"><span>06:45</span><span>NUVYRA</span></div>
+          <div class="phone-top"><span>06:45 AM</span><span>NUVYRA</span></div>
           <div class="phone-body">
-            <div class="phone-hi">Hola, Carlos</div>
+            <div class="phone-hi">Buen día, Carlos</div>
+            <div class="phone-sub">Resultado de tu chequeo de 2 minutos:</div>
             <div id="sim-persona" class="sim-state s-verde" aria-live="polite">
               <strong id="sim-p-titulo"></strong>
               <p id="sim-p-texto"></p>
             </div>
-            <button type="button" id="sim-boton" class="phone-btn">Comenzar tarea</button>
-            <p id="sim-boton-nota" class="phone-note"></p>
+            <p id="sim-boton-nota" class="phone-note" hidden></p>
+            <button type="button" id="sim-boton" class="phone-btn">Listo para iniciar mi turno</button>
           </div>
         </div>
       </div>
-      <div>
-        <div class="sim-label">Panel del supervisor</div>
+
+      <div class="sim-col">
+        <div class="sim-label"><span>Vista en el panel de Marcela</span><span class="role-tag">Supervisora directa</span></div>
         <div class="panel">
           <div id="sim-banner" class="banner" hidden role="status" aria-live="assertive"></div>
-          <ul class="crew" aria-label="Equipo de ejemplo">
-            <li><span class="dot d-verde" aria-hidden="true"></span><span class="who">Roberto M.<small>Evaluado 06:40</small></span><span class="pill p-verde">Normal</span></li>
-            <li><span class="dot d-verde" aria-hidden="true"></span><span class="who">Diego P.<small>Evaluado 06:42</small></span><span class="pill p-verde">Normal</span></li>
-            <li id="sim-fila"><span id="sim-dot" class="dot d-verde" aria-hidden="true"></span><span class="who">Carlos S.<small>Evaluado 06:45</small></span><span id="sim-pill" class="pill p-verde">Normal</span></li>
+          <ul class="crew" aria-label="Equipo del turno de mañana">
+            <li><span class="dot d-verde" aria-hidden="true"></span><span class="who">Roberto M.<small>Chequeo 06:40 · Listo para operar</small></span><span class="pill p-verde">Normal</span></li>
+            <li><span class="dot d-verde" aria-hidden="true"></span><span class="who">Diego P.<small>Chequeo 06:42 · Listo para operar</small></span><span class="pill p-verde">Normal</span></li>
+            <li id="sim-fila"><span id="sim-dot" class="dot d-verde" aria-hidden="true"></span><span class="who">Carlos S.<small id="sim-sub-carlos">Chequeo 06:45 · Listo para operar</small></span><span id="sim-pill" class="pill p-verde">Normal</span></li>
           </ul>
           <ol id="sim-pasos" class="pasos" hidden>
-            <li id="paso-1">Aviso recibido</li>
-            <li id="paso-2">Visita y conversación</li>
-            <li id="paso-3">Acción registrada</li>
+            <li id="paso-1">1. Aviso recibido</li>
+            <li id="paso-2">2. Conversar con Carlos</li>
+            <li id="paso-3">3. Apoyo acordado</li>
           </ol>
           <div id="sim-accion" class="sim-accion" hidden>
-            <p id="sim-s-texto" class="sim-hint"></p>
-            <button type="button" id="sim-visita" class="btn btn-secondary">Ya hablé con Carlos</button>
+            <p id="sim-s-texto" class="sim-hint" style="margin-bottom:10px"></p>
+            <button type="button" id="sim-visita" class="btn btn-primary">Paso 2: Acercarse a conversar con Carlos →</button>
             <div id="sim-sel-wrap" hidden>
-              <label for="sim-sel">¿Qué decidiste hacer?</label>
+              <label for="sim-sel">Paso 3: ¿Qué medida de cuidado acordaron juntos?</label>
               <select id="sim-sel" class="fld">
-                <option value="">Elige una acción</option>
-                <option>Le di un descanso y lo volveré a ver</option>
-                <option>Lo cambié a una tarea de menor riesgo</option>
-                <option>Lo derivé a salud ocupacional</option>
+                <option value="">Selecciona la medida de apoyo...</option>
+                <option>Pausa de descanso de 1 hora e hidratación antes de operar</option>
+                <option>Reasignar hoy a una tarea en equipo sin conducción de maquinaria</option>
+                <option>Acompañar a evaluación preventiva en policlínico / salud ocupacional</option>
               </select>
             </div>
             <p id="sim-ok" class="sim-ok" hidden></p>
           </div>
-          <p id="sim-s-titulo" class="sim-hint" style="margin-top:8px"></p>
+          <p id="sim-s-titulo" class="sim-hint" style="margin-top:12px"></p>
         </div>
       </div>
     </div>
-    <p class="fine">Simulación con datos de ejemplo. El aviso al supervisor existe hoy; el bloqueo del botón y la gestión de casos están en desarrollo.</p>
   </div>
 </section>
 <script>
 (function(){
   var N = {
-    verde:   {p:["Sin alerta","Tu resultado está dentro de lo normal para ti. Buen turno."], s:["Todo en orden. No hay nada que hacer.",""], cls:"s-verde", pill:"Normal", pc:"p-verde", dc:"d-verde", acc:false, block:false},
-    amarillo:{p:["Aviso preventivo","Tu resultado salió algo por debajo de tu nivel normal. Tu supervisor conversará contigo."], s:["Aviso: cansancio moderado","Carlos salió por debajo de su nivel normal."], cls:"s-amarillo", pill:"Aviso", pc:"p-amarillo", dc:"d-amarillo", acc:true, block:false},
-    rojo:    {p:["Cansancio severo","Por tu seguridad, no inicies tareas de riesgo. Tu supervisor irá a verte."], s:["Alerta: cansancio severo","Carlos no debería hacer tareas de riesgo. Ve a verlo."], cls:"s-rojo", pill:"Alerta", pc:"p-rojo", dc:"d-rojo", acc:true, block:true}
+    verde: {
+      p:["¡Todo en orden hoy!","Tu atención y tiempo de reacción están dentro de tu nivel habitual. Que tengas un excelente y seguro turno."],
+      s:["Todo el equipo se encuentra en su nivel habitual. No se requieren medidas adicionales.",""],
+      sub:"Chequeo 06:45 · En su nivel habitual",
+      btn:"Listo para iniciar mi turno",
+      nota:"",
+      cls:"s-verde", pill:"Normal", pc:"p-verde", dc:"d-verde", acc:false, pause:false
+    },
+    amarillo: {
+      p:["Hoy muestras algo de cansancio","Tu resultado estuvo un poco más lento que tu ritmo habitual. Tu supervisora Marcela se acercará a conversar contigo para apoyarte."],
+      s:["Aviso de cuidado: Carlos muestra cansancio moderado","Acércate a conversar con él para saber cómo se siente y definir si necesita una pausa o apoyo en su tarea."],
+      sub:"Chequeo 06:45 · Requiere conversación de apoyo",
+      btn:"Esperando conversación con mi supervisora",
+      nota:"💡 Nadie te sancionará por estar cansado. Conversa con tu supervisora para organizar tu turno de forma segura.",
+      cls:"s-amarillo", pill:"Apoyo sugerido", pc:"p-amarillo", dc:"d-amarillo", acc:true, pause:false
+    },
+    rojo: {
+      p:["Primero está tu bienestar","Hoy tu resultado refleja un cansancio importante. Por tu cuidado, haz una pausa antes de iniciar labores de riesgo; tu supervisora ya va a acompañarte."],
+      s:["Atención prioritaria: Carlos presenta cansancio alto","Por su seguridad, acompáñalo antes de que inicie tareas críticas o conducción para darle un descanso o ajustar su labor de hoy."],
+      sub:"Chequeo 06:45 · Prioridad de acompañamiento",
+      btn:"En pausa preventiva de cuidado",
+      nota:"🛡️ Pausa preventiva activa: te cuidamos para que no operes equipos pesados mientras te sientas agotado.",
+      cls:"s-rojo", pill:"Cuidado prioritario", pc:"p-rojo", dc:"d-rojo", acc:true, pause:true
+    }
   };
   var $ = function(id){ return document.getElementById(id); };
   var btns = document.querySelectorAll(".sim-btn"), cur = "verde";
@@ -131,8 +236,13 @@
     $("sim-persona").className = "sim-state " + n.cls;
     $("sim-p-titulo").textContent = n.p[0]; $("sim-p-texto").textContent = n.p[1];
     $("sim-pill").textContent = n.pill; $("sim-pill").className = "pill " + n.pc; $("sim-dot").className = "dot " + n.dc;
+    $("sim-sub-carlos").textContent = n.sub;
     $("sim-fila").className = n.acc ? "fila-alerta" : "";
-    var b = $("sim-boton"); b.disabled = n.block; $("sim-boton-nota").textContent = n.block ? "Botón bloqueado por seguridad hasta que tu supervisor te vea." : "";
+    var b = $("sim-boton");
+    b.textContent = n.btn;
+    b.className = n.pause ? "phone-btn pause-mode" : "phone-btn";
+    var nota = $("sim-boton-nota");
+    if (n.nota) { nota.hidden = false; nota.textContent = n.nota; } else { nota.hidden = true; }
     var banner = $("sim-banner");
     if (n.acc) { banner.hidden = false; banner.className = "banner b-" + k; banner.textContent = n.s[0]; } else { banner.hidden = true; }
     $("sim-s-titulo").textContent = n.acc ? "" : n.s[0];
@@ -146,54 +256,64 @@
   $("sim-visita").addEventListener("click", function(){ $("sim-visita").hidden = true; $("sim-sel-wrap").hidden = false; setPaso(2); });
   $("sim-sel").addEventListener("change", function(){
     var s = $("sim-sel");
-    if (s.value) { setPaso(3); $("sim-ok").textContent = "Registrado: " + s.value + ". Queda con fecha, hora y responsable."; $("sim-ok").hidden = false; $("sim-pill").textContent = "En seguimiento"; $("sim-pill").className = "pill p-seg"; }
+    if (s.value) {
+      setPaso(3);
+      $("sim-ok").textContent = "✓ Medida de cuidado acordada: «" + s.value + "». Carlos queda acompañado y protegido.";
+      $("sim-ok").hidden = false;
+      $("sim-pill").textContent = "Acompañado";
+      $("sim-pill").className = "pill p-seg";
+      $("sim-sub-carlos").textContent = "Medida de apoyo activa en terreno";
+    }
   });
   pintar("verde");
 })();
 </script>
-<section class="white" id="problema">
+
+<section id="beneficios">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">Lo que buscamos resolver</div>
-      <h2>La información preventiva sirve cuando alguien actúa con ella.</h2>
+      <div class="eyebrow">Por qué ayuda a todos</div>
+      <h2>Cuando cuidamos el descanso, ganan las personas y gana la operación.</h2>
     </div>
     <div class="three">
-      <div class="card"><span class="num">01</span><h3>Información dispersa</h3><p>Los datos preventivos viven en planillas, mensajes y reportes sueltos, y cuesta verlos en un solo lugar.</p></div>
-      <div class="card"><span class="num">02</span><h3>Situaciones sin responsable</h3><p>Una alerta sin una persona asignada y un plazo claro tiende a quedarse en una conversación.</p></div>
-      <div class="card"><span class="num">03</span><h3>Poca trazabilidad</h3><p>Cuando hay que explicar qué se hizo y cuándo, el registro está incompleto o no se puede verificar.</p></div>
+      <div class="card">
+        <span class="num">Para los trabajadores</span>
+        <h3>Regresar sanos a casa</h3>
+        <p>Permite expresar con datos objetivos cuando el cuerpo necesita una pausa, sin miedo a represalias y con apoyo directo en terreno.</p>
+      </div>
+      <div class="card">
+        <span class="num">Para quienes supervisan</span>
+        <h3>Guía clara para apoyar al turno</h3>
+        <p>En lugar de enterarse cuando ya ocurrió un incidente, el supervisor recibe un aviso temprano para conversar con su equipo y organizar las tareas del día.</p>
+      </div>
+      <div class="card">
+        <span class="num">Para la empresa</span>
+        <h3>Prevención real y respaldada</h3>
+        <p>Toda la gestión preventiva queda ordenada en un solo lugar, demostrando ante mandantes y organismos que la salud del equipo se cuida de verdad.</p>
+      </div>
     </div>
   </div>
 </section>
-<section id="como-funciona">
-  <div class="wrap">
-    <div class="head">
-      <div class="eyebrow">Cómo funciona</div>
-      <h2>Un ciclo simple, de la medición a la acción.</h2>
-      <p class="lead">Cada paso queda registrado. Los tres primeros funcionan hoy; el cuarto está en desarrollo.</p>
-    </div>
-    <div class="steps">
-      <div class="step"><span class="badge now"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>Disponible</span><h3>1 · Medir</h3><p>Una evaluación diaria de unos 2 minutos: concentración visual y tiempo de reacción.</p></div>
-      <div class="step"><span class="badge now"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>Disponible</span><h3>2 · Comparar</h3><p>El resultado se compara con el nivel normal de la propia persona, no con un promedio ajeno.</p></div>
-      <div class="step"><span class="badge now"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>Disponible</span><h3>3 · Avisar</h3><p>Normal, fatiga moderada o fatiga severa, con forma y palabra, no solo color.</p></div>
-      <div class="step"><span class="badge soon"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>En desarrollo</span><h3>4 · Actuar</h3><p>Un caso con responsable, plazo y evidencia de cierre, ligado a la alerta.</p></div>
-    </div>
-  </div>
-</section>
+
 <section class="white" id="explorar">
   <div class="wrap">
-    <div class="head"><div class="eyebrow">Explora</div><h2>Conoce cada parte de NUVYRA.</h2></div>
+    <div class="head"><div class="eyebrow">Recorre el sitio</div><h2>Conoce cada parte de NUVYRA.</h2></div>
     <div class="explore">
-      <a href="producto.html"><h3>Producto</h3><p>Lo que ya funciona hoy y lo que estamos construyendo.</p><span class="go">Ver producto →</span></a>
-      <a href="seguridad.html"><h3>Seguridad</h3><p>Cómo cuidamos la información de cada empresa.</p><span class="go">Ver seguridad →</span></a>
-      <a href="nosotros.html"><h3>Quiénes somos</h3><p>Nuestra visión y hacia dónde queremos llegar.</p><span class="go">Conocernos →</span></a>
-      <a href="contacto.html"><h3>Contacto</h3><p>Cómo escribirnos y solicitar información.</p><span class="go">Ir a contacto →</span></a>
+      <a href="producto.html"><h3>Producto</h3><p>Mira las pantallas actualizadas de la aplicación y cómo funciona el acompañamiento.</p><span class="go">Ver pantallas reales →</span></a>
+      <a href="servicios.html"><h3>Servicios y Asesoría</h3><p>Consultoría en medicina de altura (hipoxia) y carpetas de arranque mineras.</p><span class="go">Ver especialistas →</span></a>
+      <a href="nosotros.html"><h3>Quiénes somos</h3><p>Conoce a las profesionales de salud, prevención SERNAGEOMIN y derecho detrás de NUVYRA.</p><span class="go">Conocer al equipo →</span></a>
+      <a href="contacto.html"><h3>Contacto</h3><p>Escríbenos por WhatsApp o correo para conversar sobre tu faena o empresa.</p><span class="go">Hablar con nosotros →</span></a>
     </div>
   </div>
 </section>
+
 <section class="band" aria-labelledby="band-t">
   <div class="wrap"><div class="box">
-    <div><h2 id="band-t">¿Quieres saber más sobre NUVYRA?</h2><p>Estamos preparando nuestros canales de contacto. Revisa la página de contacto.</p></div>
-    <a class="btn btn-primary" href="contacto.html">Ir a Contacto</a>
+    <div><h2 id="band-t">¿Te gustaría ver cómo funcionaría en tu equipo?</h2><p>Conversemos sin compromiso. Te mostramos la plataforma en vivo y resolvemos tus dudas.</p></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn btn-primary" href="contacto.html">Escribirnos ahora</a>
+      <a class="btn btn-secondary" href="https://wa.me/56974578653?text=Hola%2C%20quiero%20conocer%20NUVYRA" target="_blank" rel="noopener">WhatsApp +56 9 7457 8653</a>
+    </div>
   </div></div>
 </section>
 </main>
@@ -202,7 +322,7 @@
     <div class="row">
       <div>
         <a class="brand" href="index.html"><svg width="30" height="30"><use href="#mark"/></svg><span>NUVYRA</span></a>
-        <p style="margin-top:12px;max-width:34ch;font-size:16px">Gestión preventiva y operacional, con información trazable.</p>
+        <p style="margin-top:12px;max-width:36ch;font-size:16px">Prevención de fatiga y acompañamiento humano en terreno para cuidar a las personas.</p>
       </div>
       <ul aria-label="Enlaces">
         <li><a href="producto.html">Producto</a></li>
@@ -215,7 +335,7 @@
         <li><a href="https://wa.me/56974578653" target="_blank" rel="noopener">+56 9 7457 8653</a></li>
       </ul>
     </div>
-    <p class="small">© 2026 NUVYRA. Las pantallas mostradas son de la aplicación con datos de ejemplo. Política de privacidad y términos: pendientes de publicar.</p>
+    <p class="small">© 2026 NUVYRA. Las pantallas mostradas corresponden a nuestra plataforma con nombres y datos ficticios de ejemplo.</p>
   </div>
 </footer>
 </body>
