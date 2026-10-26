@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto · NUVYRA</title>
+<meta name="description" content="Canales de contacto de NUVYRA para consultas comerciales y solicitudes de información.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="estilos.css">
+<!-- BOCETO de diseño (fase 2). No forma parte de la aplicación. Datos de pantallas: ejemplo, no reales. -->
+</head>
+<body>
+<div class="preview-bar" role="note">Versión de revisión: boceto de diseño del sitio de NUVYRA. Los datos y pantallas son de ejemplo y el ingreso no funciona.</div>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10.4" fill="none" stroke="currentColor" stroke-width="1.9"/>
+    <path d="M8.1 16.6V7.6L15.9 16.6V10.6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="15.9" cy="7.2" r="2.2" fill="#1d5fbf"/>
+  </symbol>
+  <symbol id="tick" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="#1d5fbf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="NUVYRA, inicio"><svg width="30" height="30"><use href="#mark"/></svg><span>NUVYRA</span></a>
+    <nav class="main" aria-label="Principal"><a href="index.html">Inicio</a><a href="producto.html">Producto</a><a href="servicios.html">Servicios</a><a href="seguridad.html">Seguridad</a><a href="nosotros.html">Quiénes somos</a><a href="contacto.html" aria-current="page">Contacto</a></nav>
+    <div class="actions">
+      <details class="menu"><summary>Menú</summary><div class="sheet"><a href="index.html">Inicio</a><a href="producto.html">Producto</a><a href="servicios.html">Servicios</a><a href="seguridad.html">Seguridad</a><a href="nosotros.html">Quiénes somos</a><a href="contacto.html" aria-current="page">Contacto</a></div></details>
+      <a class="btn btn-primary" href="login.html">Ingresar</a>
+    </div>
+  </div>
+</header>
+<main id="contenido">
+<div class="page-head"><div class="wrap">
+  <div class="eyebrow">Contacto</div>
+  <h1>Hablemos.</h1>
+  <p class="lead">Escríbenos por correo o WhatsApp, o completa el formulario. Te respondemos lo antes posible.</p>
+</div></div>
+<section id="contacto">
+  <div class="wrap contact-grid">
+    <div class="channels" aria-label="Medios de contacto">
+      <div class="channel"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d5fbf" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg><div><h3>Correo electrónico</h3><p><a href="mailto:contacto@nuvyra.cl">contacto@nuvyra.cl</a></p></div></div>
+      <div class="channel"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1d5fbf" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.5L3 21l1.6-5.4A8.5 8.5 0 1 1 21 12z"/></svg><div><h3>WhatsApp y teléfono</h3><p><a href="https://wa.me/56974578653?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20NUVYRA" target="_blank" rel="noopener">+56 9 7457 8653</a></p></div></div>
+    </div>
+    <div class="formcard">
+      <h2 style="font-size:26px;margin-bottom:6px">Escríbenos</h2>
+      <p style="color:var(--muted);margin-bottom:20px">Para consultas comerciales y solicitudes de información.</p>
+      <form id="form-contacto" novalidate aria-describedby="nota-form">
+        <div class="fgrid">
+          <div><label for="f-nombre">Nombre</label><input id="f-nombre" class="fld" autocomplete="name"></div>
+          <div><label for="f-empresa">Empresa</label><input id="f-empresa" class="fld" autocomplete="organization"></div>
+          <div><label for="f-correo">Correo</label><input id="f-correo" type="email" class="fld" autocomplete="email"></div>
+          <div><label for="f-motivo">Motivo</label><select id="f-motivo" class="fld"><option>Solicitar información</option><option>Consulta comercial</option><option>Otro</option></select></div>
+          <div class="full"><label for="f-msg">Mensaje</label><textarea id="f-msg" class="fld"></textarea></div>
+          <div class="full check"><input type="checkbox" id="f-ok"><label for="f-ok" style="font-weight:400;margin:0;font-size:15px">Acepto que usen estos datos solo para responderme.</label></div>
+          <div class="full"><button class="btn btn-primary">Enviar mensaje</button></div>
+        </div>
+        <p id="nota-form" class="fine" style="margin-top:14px">Al enviar, se abre tu programa de correo con el mensaje listo para mandar a contacto@nuvyra.cl.</p>
+      </form>
+      <script>
+      document.getElementById("form-contacto").addEventListener("submit", function(e){
+        e.preventDefault();
+        var v = function(id){ return document.getElementById(id).value.trim(); };
+        if (!v("f-nombre") || !v("f-correo") || !v("f-msg")) { alert("Por favor completa tu nombre, tu correo y el mensaje."); return; }
+        if (!document.getElementById("f-ok").checked) { alert("Marca la casilla para que podamos usar tus datos y responderte."); return; }
+        var cuerpo = "Nombre: " + v("f-nombre") + "\nEmpresa: " + v("f-empresa") + "\nCorreo: " + v("f-correo") + "\n\n" + v("f-msg");
+        window.location.href = "mailto:contacto@nuvyra.cl?subject=" + encodeURIComponent(v("f-motivo") + " - NUVYRA") + "&body=" + encodeURIComponent(cuerpo);
+      });
+      </script>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <a class="brand" href="index.html"><svg width="30" height="30"><use href="#mark"/></svg><span>NUVYRA</span></a>
+        <p style="margin-top:12px;max-width:34ch;font-size:16px">Gestión preventiva y operacional, con información trazable.</p>
+      </div>
+      <ul aria-label="Enlaces">
+        <li><a href="producto.html">Producto</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="seguridad.html">Seguridad</a></li>
+        <li><a href="nosotros.html">Quiénes somos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Ingresar</a></li>
+        <li><a href="mailto:contacto@nuvyra.cl">contacto@nuvyra.cl</a></li>
+        <li><a href="https://wa.me/56974578653" target="_blank" rel="noopener">+56 9 7457 8653</a></li>
+      </ul>
+    </div>
+    <p class="small">© 2026 NUVYRA. Las pantallas mostradas son de la aplicación con datos de ejemplo. Política de privacidad y términos: pendientes de publicar.</p>
+  </div>
+</footer>
+</body>
+</html>

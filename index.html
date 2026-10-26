@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NUVYRA · Que el cansancio no sea el próximo incidente</title>
+<meta name="description" content="Detecta la fatiga a tiempo, asigna un responsable y deja registro de lo que se hizo. Una evaluación de 2 minutos al día, comparada con el nivel normal de cada persona.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="estilos.css">
+<!-- BOCETO de diseño (fase 2). No forma parte de la aplicación. Datos de pantallas: ejemplo, no reales. -->
+</head>
+<body>
+<div class="preview-bar" role="note">Versión de revisión: boceto de diseño del sitio de NUVYRA. Los datos y pantallas son de ejemplo y el ingreso no funciona.</div>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10.4" fill="none" stroke="currentColor" stroke-width="1.9"/>
+    <path d="M8.1 16.6V7.6L15.9 16.6V10.6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="15.9" cy="7.2" r="2.2" fill="#1d5fbf"/>
+  </symbol>
+  <symbol id="tick" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3.2L13 4.8" fill="none" stroke="#1d5fbf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="NUVYRA, inicio"><svg width="30" height="30"><use href="#mark"/></svg><span>NUVYRA</span></a>
+    <nav class="main" aria-label="Principal"><a href="index.html" aria-current="page">Inicio</a><a href="producto.html">Producto</a><a href="seguridad.html">Seguridad</a><a href="nosotros.html">Quiénes somos</a><a href="contacto.html">Contacto</a></nav>
+    <div class="actions">
+      <details class="menu"><summary>Menú</summary><div class="sheet"><a href="index.html" aria-current="page">Inicio</a><a href="producto.html">Producto</a><a href="seguridad.html">Seguridad</a><a href="nosotros.html">Quiénes somos</a><a href="contacto.html">Contacto</a></div></details>
+      <a class="btn btn-primary" href="login.html">Ingresar</a>
+    </div>
+  </div>
+</header>
+<main id="contenido">
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <div class="eyebrow">Prevención de fatiga para faenas y operaciones</div>
+      <h1>Que el cansancio no sea la causa del próximo incidente.</h1>
+      <p class="lead">Una evaluación de 2 minutos al día detecta cuándo una persona no está en su mejor nivel. Y si hay riesgo, <strong>alguien responde a tiempo</strong>, con nombre y plazo.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="contacto.html">Solicitar una demostración</a>
+        <a class="btn btn-secondary" href="#simulador">Probarlo ahora ↓</a>
+      </div>
+      <ul class="proofs" aria-label="Lo esencial">
+        <li><b>2 min</b><span>por persona, al día</span></li>
+        <li><b>1 h</b><span>para la primera atención de un caso severo</span></li>
+        <li><b>Tu propio nivel</b><span>cada persona se compara consigo misma</span></li>
+      </ul>
+    </div>
+    <div class="sim" id="simulador" aria-labelledby="sim-t">
+      <h2 id="sim-t" class="sim-title">Pruébalo: mueve el resultado de hoy</h2>
+      <p class="sim-sub">Una persona cuyo nivel normal es <b>80 puntos</b>. ¿Qué pasa si hoy saca…?</p>
+      <div class="gauge" aria-hidden="true">
+        <div class="zone z-bad"></div><div class="zone z-mid"></div><div class="zone z-ok"></div>
+        <div class="base" title="Su nivel normal"><span>Nivel normal</span></div>
+        <div class="pin" id="pin"><span id="pinv">80</span></div>
+      </div>
+      <input id="score" class="range" type="range" min="30" max="100" value="80" aria-label="Resultado de hoy, de 30 a 100 puntos" aria-describedby="sim-out">
+      <div class="sim-state"><span id="chip" class="chip ok"><i></i><span id="chipt">Normal</span></span><span class="sim-pts"><b id="pts">80</b> de 100</span></div>
+      <div id="sim-out" class="sim-out" role="status" aria-live="polite"></div>
+      <p class="fine">Simulación con datos de ejemplo. No es un diagnóstico médico.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="problema" aria-labelledby="prob-t">
+  <div class="wrap">
+    <div class="eyebrow light">El problema real</div>
+    <h2 id="prob-t">La fatiga no avisa. Y cuando se detecta, casi nunca hay un dueño.</h2>
+    <div class="tiles">
+      <div class="tile"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="8" width="16" height="12" rx="2"/><rect x="26" y="14" width="16" height="12" rx="2"/><rect x="10" y="28" width="16" height="12" rx="2"/></svg><h3>Todo está en planillas</h3><p>El dato existe, pero está repartido y nadie lo ve completo a tiempo.</p></div>
+      <div class="tile"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="16" r="7"/><path d="M10 40c0-8 6-13 14-13s14 5 14 13"/><path d="M30 8l8 8M38 8l-8 8" class="x"/></svg><h3>“¿A quién le toca?”</h3><p>Una alerta sin responsable ni plazo se queda en una conversación de pasillo.</p></div>
+      <div class="tile"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 6h18l8 8v28H12z"/><path d="M30 6v8h8M18 24h14M18 31h10"/></svg><h3>Nadie puede demostrarlo</h3><p>Cuando hay que explicar qué se hizo y cuándo, falta el registro.</p></div>
+    </div>
+    <p class="turn">NUVYRA cierra ese ciclo: <b>mide, avisa, asigna y deja evidencia.</b></p>
+  </div>
+</section>
+
+<section id="como-funciona" aria-labelledby="flow-t">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Cómo funciona</div><h2 id="flow-t">Del cansancio a la acción en cuatro pasos.</h2><p class="lead">Toca cada paso.</p></div>
+    <div class="stepper">
+      <div class="tabs" role="tablist" aria-label="Pasos">
+        <button role="tab" aria-selected="true" aria-controls="p0" id="t0">1 · Medir</button>
+        <button role="tab" aria-selected="false" aria-controls="p1" id="t1" tabindex="-1">2 · Comparar</button>
+        <button role="tab" aria-selected="false" aria-controls="p2" id="t2" tabindex="-1">3 · Avisar</button>
+        <button role="tab" aria-selected="false" aria-controls="p3" id="t3" tabindex="-1">4 · Actuar</button>
+      </div>
+      <div class="panels">
+        <div role="tabpanel" id="p0" aria-labelledby="t0"><div class="pp"><div class="big">2 min</div><div><h3>Una evaluación corta, cada día</h3><p>Concentración visual y tiempo de reacción, desde el celular o el computador. Sin equipos especiales.</p></div></div></div>
+        <div role="tabpanel" id="p1" aria-labelledby="t1" hidden><div class="pp"><div class="big">Tú vs. tú</div><div><h3>Cada persona se compara consigo misma</h3><p>Lo que importa no es el promedio del grupo, sino cuánto se aleja hoy de su propio nivel normal.</p></div></div></div>
+        <div role="tabpanel" id="p2" aria-labelledby="t2" hidden><div class="pp"><div class="big"><span class="chip ok"><i></i>OK</span> <span class="chip mid"><i></i>Mod.</span> <span class="chip bad"><i></i>Sev.</span></div><div><h3>Normal, moderada o severa</h3><p>Siempre con forma y palabra, no solo color. Quien descansa, está de vacaciones o con licencia no se marca como pendiente.</p></div></div></div>
+        <div role="tabpanel" id="p3" aria-labelledby="t3" hidden><div class="pp"><div class="big">1 h</div><div><h3>Un caso con responsable y plazo</h3><p>La alerta severa abre un caso automático para quien esté de turno, con primera atención en 1 hora y cierre con evidencia. <span class="soon-tag">En desarrollo</span></p></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="white" id="turnos" aria-labelledby="turn-t">
+  <div class="wrap duo">
+    <div>
+      <div class="eyebrow">Hecho para turnos reales</div>
+      <h2 id="turn-t">Entiende tu sistema: 7x7, 14x14, 5x2, 4x3…</h2>
+      <p class="lead">Cada persona declara su turno una vez. NUVYRA sabe quién está trabajando, quién descansa y quién está de vacaciones, y solo pide la evaluación cuando corresponde.</p>
+      <div class="pick" role="group" aria-label="Elige un sistema de turno">
+        <button type="button" class="pk" aria-pressed="true" data-p="7x7">7x7</button>
+        <button type="button" class="pk" aria-pressed="false" data-p="14x14">14x14</button>
+        <button type="button" class="pk" aria-pressed="false" data-p="5x2">5x2</button>
+        <button type="button" class="pk" aria-pressed="false" data-p="4x3">4x3</button>
+      </div>
+      <label class="sw"><input type="checkbox" id="vac"> Con vacaciones en la 2.ª semana</label>
+    </div>
+    <div class="cal-card">
+      <div class="cal" id="cal" role="img" aria-label="Calendario de cuatro semanas con días de trabajo, descanso y vacaciones"></div>
+      <ul class="legend"><li><i class="k w"></i>Trabaja: se le pide la evaluación</li><li><i class="k r"></i>Descansa: no cuenta como pendiente</li><li><i class="k v"></i>Vacaciones o licencia</li><li><i class="k h"></i>Feriado (5x2 descansa)</li></ul>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="roles-t">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Para cada rol</div><h2 id="roles-t">Cada persona ve lo que necesita. Nada más.</h2></div>
+    <div class="stepper">
+      <div class="tabs" role="tablist" aria-label="Roles">
+        <button role="tab" aria-selected="true" aria-controls="r0" id="rt0">Supervisor</button>
+        <button role="tab" aria-selected="false" aria-controls="r1" id="rt1" tabindex="-1">Prevención</button>
+        <button role="tab" aria-selected="false" aria-controls="r2" id="rt2" tabindex="-1">Gerencia</button>
+        <button role="tab" aria-selected="false" aria-controls="r3" id="rt3" tabindex="-1">Trabajador</button>
+      </div>
+      <div class="panels">
+        <div role="tabpanel" id="r0" aria-labelledby="rt0"><ul class="ticks"><li>Ve el estado de su equipo en una pantalla.</li><li>Recibe los casos que le tocan, con plazo.</li><li>Registra qué hizo y cierra con evidencia.</li></ul></div>
+        <div role="tabpanel" id="r1" aria-labelledby="rt1" hidden><ul class="ticks"><li>Ve toda la empresa y reasigna casos cuando hace falta.</li><li>Registra licencias, vacaciones y permisos (solo tipo y fechas).</li><li>Tiene el historial completo, listo para auditoría.</li></ul></div>
+        <div role="tabpanel" id="r2" aria-labelledby="rt2" hidden><ul class="ticks"><li>Cumplimiento por área y por equipo, cada día.</li><li>Cuántos casos hay abiertos y cuáles están vencidos.</li><li>Decide con datos, sin mirar puntajes individuales.</li></ul></div>
+        <div role="tabpanel" id="r3" aria-labelledby="rt3" hidden><ul class="ticks"><li>Una evaluación de 2 minutos, clara y sin complicaciones.</li><li>Ve su propio resultado frente a su nivel normal.</li><li>Sus datos están separados por empresa y protegidos.</li></ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="white" aria-labelledby="shots-t">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">La aplicación</div><h2 id="shots-t">Todo, de un vistazo.</h2></div>
+    <div class="shots">
+      <figure><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/app-areas-organigrama.webp" width="1304" height="760" alt="Panel de áreas con el organigrama y el cumplimiento de cada equipo"></div><figcaption class="cap">Áreas y equipos: quién cumple y quién no, hoy.</figcaption></figure>
+      <figure><div class="frame"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/app-historial.webp" width="1304" height="760" alt="Historial de resultados de una persona"></div><figcaption class="cap">Historial: la evolución, no solo el día de hoy.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="band-t">
+  <div class="wrap"><div class="box">
+    <div><h2 id="band-t">Veamos cómo se vería en tu operación.</h2><p>Cuéntanos tu faena y tus turnos. Te mostramos NUVYRA con un caso como el tuyo.</p></div>
+    <a class="btn btn-primary" href="contacto.html">Solicitar una demostración</a>
+  </div></div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <a class="brand" href="index.html"><svg width="30" height="30"><use href="#mark"/></svg><span>NUVYRA</span></a>
+        <p style="margin-top:12px;max-width:34ch;font-size:16px">Gestión preventiva y operacional, con información trazable.</p>
+      </div>
+      <ul aria-label="Enlaces">
+        <li><a href="producto.html">Producto</a></li>
+        <li><a href="seguridad.html">Seguridad</a></li>
+        <li><a href="nosotros.html">Quiénes somos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="login.html">Ingresar</a></li>
+      </ul>
+    </div>
+    <p class="small">© 2026 NUVYRA. Las pantallas mostradas son de la aplicación con datos de ejemplo. Política de privacidad y términos: pendientes de publicar.</p>
+  </div>
+</footer>
+<script>
+(function(){
+  // --- simulador ---
+  var score=document.getElementById('score');
+  var out=document.getElementById('sim-out'),chip=document.getElementById('chip'),chipt=document.getElementById('chipt');
+  var pin=document.getElementById('pin'),pinv=document.getElementById('pinv'),pts=document.getElementById('pts');
+  var MIN=30,MAX=100;
+  function sim(){
+    var v=+score.value,pct=(v-MIN)/(MAX-MIN)*100,state,msg;
+    pin.style.left=pct+'%';pinv.textContent=v;pts.textContent=v;
+    if(v>=73){state=['ok','Normal'];msg='<b>Sigue su jornada.</b> No se requiere ninguna acción. El resultado queda en su historial.';}
+    else if(v>=61){state=['mid','Fatiga moderada'];msg='<b>Aviso a la jefatura.</b> Queda a la vista del equipo y puede abrirse un caso con responsable (primera atención en 4 h).';}
+    else{state=['bad','Fatiga severa'];msg='<b>Se abre un caso automático.</b> Responsable: la jefatura que esté de turno. Primera atención en <b>1 hora</b> y cierre con evidencia en 24 h.';}
+    chip.className='chip '+state[0];chipt.textContent=state[1];out.innerHTML=msg;
+  }
+  score.addEventListener('input',sim);sim();
+  document.getElementById('sim-t');
+  // --- pestañas (pasos y roles) ---
+  document.querySelectorAll('.tabs').forEach(function(tabs){
+    var all=[].slice.call(tabs.querySelectorAll('[role=tab]'));
+    function show(i,focus){all.forEach(function(t,j){var on=i===j;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;document.getElementById(t.getAttribute('aria-controls')).hidden=!on;});if(focus)all[i].focus();}
+    all.forEach(function(t,i){t.addEventListener('click',function(){show(i)});t.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight')show((i+1)%all.length,1);else if(e.key==='ArrowLeft')show((i+all.length-1)%all.length,1);});});
+  });
+  // --- calendario de turnos ---
+  var cal=document.getElementById('cal'),vac=document.getElementById('vac'),pat='7x7';
+  var DAYS=['L','M','M','J','V','S','D'],HOLI=[10]; // un feriado de ejemplo (viernes de la semana 2)
+  function drawCal(){
+    var p=pat.split('x'),w=+p[0],r=+p[1],cyc=w+r,html='';
+    DAYS.forEach(function(d){html+='<div class="dh" aria-hidden="true">'+d+'</div>';});
+    for(var i=0;i<28;i++){
+      var cls,off=i%cyc,work=off<w,weekly=pat==='5x2';
+      if(weekly){work=(i%7)<5;}
+      cls=work?'w':'r';
+      if(weekly&&HOLI.indexOf(i)>-1&&work)cls='h';
+      if(vac.checked&&i>=7&&i<14)cls='v';
+      html+='<div class="d '+cls+'"><span>'+(i+1)+'</span></div>';
+    }
+    cal.innerHTML=html;
+  }
+  document.querySelectorAll('.pk').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('.pk').forEach(function(x){x.setAttribute('aria-pressed',x===b)});pat=b.dataset.p;drawCal();});});
+  vac.addEventListener('change',drawCal);drawCal();
+})();
+</script>
+</body>
+</html>
