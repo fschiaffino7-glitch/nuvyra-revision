@@ -5,12 +5,12 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NUVYRA · Prevención de fatiga y gestión operacional</title>
-<meta name="description" content="Con NUVYRA cada trabajador mide sus reflejos en 2 minutos desde el celular antes del turno. Sin cámaras en cabina y con respaldo para empresas mandantes.">
+<meta name="description" content="Con NUVYRA cada trabajador mide su atención y velocidad de reacción en 2 minutos antes del turno. Sin cámaras en cabina y con respaldo para empresas mandantes.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-<div class="preview-bar" role="note">Versión de revisión de NUVYRA · Las pantallas y el simulador contienen datos de ejemplo.</div>
+<div class="preview-bar" role="note">Versión de revisión de NUVYRA · Las pantallas y el tour virtual contienen datos de ejemplo.</div>
 <a class="skip" href="#contenido">Saltar al contenido</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="mark" viewBox="0 0 24 24">
@@ -23,9 +23,25 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="NUVYRA, inicio"><svg width="30" height="30"><use href="#mark"/></svg><span>NUVYRA</span></a>
-    <nav class="main" aria-label="Principal"><a href="index.html" aria-current="page">Inicio</a><a href="producto.html">Producto</a><a href="servicios.html">Servicios</a><a href="seguridad.html">Seguridad</a><a href="nosotros.html">Quiénes somos</a><a href="contacto.html">Contacto</a></nav>
+    <nav class="main" aria-label="Principal">
+      <a href="index.html" aria-current="page">Inicio</a>
+      <a href="producto.html">Producto</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="seguridad.html">Seguridad</a>
+      <a href="nosotros.html">Quiénes somos</a>
+      <a href="contacto.html">Contacto</a>
+      <details class="subnav">
+        <summary>Políticas ▾</summary>
+        <div class="subsheet">
+          <a href="politicas.html#privacidad">Política de privacidad</a>
+          <a href="politicas.html#datos">Protección de datos (Ley 19.628 / 21.719)</a>
+          <a href="politicas.html#uso-preventivo">Uso preventivo y no punitivo</a>
+          <a href="politicas.html#terminos">Términos del servicio</a>
+        </div>
+      </details>
+    </nav>
     <div class="actions">
-      <details class="menu"><summary>Menú</summary><div class="sheet"><a href="index.html" aria-current="page">Inicio</a><a href="producto.html">Producto</a><a href="servicios.html">Servicios</a><a href="seguridad.html">Seguridad</a><a href="nosotros.html">Quiénes somos</a><a href="contacto.html">Contacto</a></div></details>
+      <details class="menu"><summary>Menú</summary><div class="sheet"><a href="index.html" aria-current="page">Inicio</a><a href="producto.html">Producto</a><a href="servicios.html">Servicios</a><a href="seguridad.html">Seguridad</a><a href="nosotros.html">Quiénes somos</a><a href="contacto.html">Contacto</a><a href="politicas.html">Políticas y privacidad</a></div></details>
       <a class="btn btn-primary" href="login.html">Ingresar</a>
     </div>
   </div>
@@ -38,14 +54,14 @@
       <div>
         <div class="eyebrow">Minería, industria y transporte</div>
         <h1>Detecta el cansancio en 2 minutos antes de iniciar el turno.</h1>
-        <p class="lead">Cada trabajador mide su atención y velocidad de reacción desde el celular al comenzar el día. Si alguien presenta fatiga, su supervisor recibe el aviso al instante para darle una pausa o asignarle una tarea sin riesgo.</p>
+        <p class="lead">Cada trabajador mide su atención y velocidad de reacción al comenzar el día. Si alguien presenta fatiga, su jefatura directa recibe el aviso al instante para darle una pausa o asignarle una tarea sin riesgo.</p>
         <div class="cta">
-          <a class="btn btn-primary" href="#simulador">Ver simulación en vivo</a>
-          <a class="btn btn-secondary" href="contacto.html">Solicitar demostración</a>
+          <a class="btn btn-primary" href="#tour-virtual">Ver tour virtual del sistema</a>
+          <a class="btn btn-secondary" href="contacto.html?servicio=Demo%20Plataforma%20NUVYRA">Solicitar demostración</a>
         </div>
       </div>
 
-      <!-- MÓDULO INTERACTIVO DE PRUEBA DE REFLEJOS (SOBRIO Y PROFESIONAL) -->
+      <!-- MÓDULO INTERACTIVO DE VELOCIDAD DE REACCIÓN -->
       <div>
         <div class="demo-card" aria-label="Módulo interactivo de prueba de velocidad de reacción">
           <div class="demo-top">
@@ -57,7 +73,7 @@
             <div id="reflex-box" class="reflex-arena">
               <div id="reflex-intro">
                 <button type="button" id="reflex-start" class="btn btn-primary">Iniciar prueba (5 s)</button>
-                <p style="font-size:13px;color:var(--muted);margin-top:8px">Simulación breve del ejercicio diario en el teléfono</p>
+                <p style="font-size:13px;color:var(--muted);margin-top:8px">Demostración breve del ejercicio diario</p>
               </div>
               <button type="button" id="reflex-dot" class="reflex-target" hidden>Tocar</button>
               <div id="reflex-done" hidden>
@@ -79,7 +95,7 @@
     <div class="kpi-strip" aria-label="Indicadores principales">
       <div class="kpi-card">
         <div class="kpi-val">2 minutos</div>
-        <div class="kpi-lbl">Evaluación diaria en el celular antes de operar</div>
+        <div class="kpi-lbl">Evaluación diaria antes de operar equipos</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-val">Sin hardware</div>
@@ -90,8 +106,8 @@
         <div class="kpi-lbl">Compara a cada trabajador contra su propio ritmo normal</div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-val">3 áreas</div>
-        <div class="kpi-lbl">Plataforma digital, medicina de altura y carpetas mineras</div>
+        <div class="kpi-val">Solución integral</div>
+        <div class="kpi-lbl">Plataforma digital, salud en altura y prevención SERNAGEOMIN</div>
       </div>
     </div>
   </div>
@@ -100,7 +116,7 @@
 (function(){
   var $ = function(id){ return document.getElementById(id); };
   var hits = 0, times = [], t0 = 0;
-  var pos = [{top:"22px",left:"28px"},{top:"96px",left:"64%"},{top:"38px",left:"40%"}];
+  var pos = [{top:"22px",left:"28px"},{top:"92px",left:"64%"},{top:"36px",left:"40%"}];
   function mover(){
     var dot = $("reflex-dot");
     var p = pos[hits % pos.length];
@@ -133,7 +149,7 @@
       $("reflex-done").hidden = false;
       $("st-status").textContent = "Normal";
       $("reflex-res-title").textContent = "Tiempo promedio: " + avg + " ms";
-      $("reflex-res-text").textContent = "En la aplicación real, este resultado se compara con la base personal del trabajador y notifica al supervisor si requiere atención.";
+      $("reflex-res-text").textContent = "En la aplicación, este resultado se compara con la base personal del trabajador y avisa a su jefatura si requiere atención.";
     }
   });
   $("reflex-retry").addEventListener("click", function(){
@@ -142,88 +158,61 @@
 })();
 </script>
 
-<!-- SIMULADOR INTERACTIVO + RECORRIDO AUTOMÁTICO -->
-<section class="white" id="simulador" aria-labelledby="sim-t">
+<!-- TOUR VIRTUAL INTERACTIVO EN PRIMER PLANO (SIN EL CELULAR PEQUEÑO, MUY LEGIBLE DE CERCA) -->
+<section class="white" id="tour-virtual" aria-labelledby="tour-t">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">Simulación operativa</div>
-      <h2 id="sim-t">Del teléfono del trabajador al panel del supervisor.</h2>
-      <p class="lead">Reproduce el recorrido automático de 4 pasos o selecciona manualmente cada estado para ver cómo actúa el sistema.</p>
+      <div class="eyebrow">Tour virtual de la plataforma</div>
+      <h2 id="tour-t">Así funciona NUVYRA paso a paso, visto de cerca.</h2>
+      <p class="lead">Reproduce el recorrido automático o haz clic en cualquiera de las 4 etapas para ver en tamaño grande cómo se gestiona un caso en terreno.</p>
     </div>
 
-    <div class="vid-box">
-      <div class="vid-head">
-        <div>
-          <strong style="font-size:17px;display:block">Recorrido guiado del flujo preventivo</strong>
-          <span style="font-size:14px;color:var(--muted)" id="vid-caption">Paso 1 de 4: El trabajador realiza su evaluación matutina y obtiene un resultado dentro de su rango normal.</span>
+    <div class="tour-player" role="region" aria-label="Reproductor de tour virtual de NUVYRA">
+      <div class="tour-top">
+        <div class="tour-top-left">
+          <span class="tour-badge">Tour Virtual</span>
+          <span class="tour-top-title" id="tour-top-label">Etapa 1 de 4 · Evaluación diaria frente al propio nivel normal</span>
         </div>
-        <button type="button" id="vid-btn" class="btn btn-primary">Reproducir recorrido automático</button>
-      </div>
-      <div class="vid-bar" aria-hidden="true"><div id="vid-fill" class="vid-fill"></div></div>
-      <div class="vid-Scenes" role="group" aria-label="Etapas de la simulación">
-        <button type="button" class="vid-scene active" data-escena="0"><b>01 · Estado normal</b>Resultado dentro del rango habitual. Inicia turno.</button>
-        <button type="button" class="vid-scene" data-escena="1"><b>02 · Cansancio moderado</b>Aviso preventivo al supervisor para conversar en terreno.</button>
-        <button type="button" class="vid-scene" data-escena="2"><b>03 · Cansancio severo</b>Pausa preventiva antes de operar maquinaria crítica.</button>
-        <button type="button" class="vid-scene" data-escena="3"><b>04 · Medida aplicada</b>Se asigna 1 hora de descanso y queda respaldado.</button>
-      </div>
-    </div>
-
-    <div class="sim-guide">
-      <div style="font-size:15px;font-weight:500;color:var(--muted)">Selección manual de estado:</div>
-      <div class="sim-pick" role="group" aria-label="Elige un resultado de ejemplo">
-        <button type="button" class="sim-btn" data-nivel="verde" aria-pressed="true">● Normal</button>
-        <button type="button" class="sim-btn" data-nivel="amarillo" aria-pressed="false">▲ Cansancio moderado</button>
-        <button type="button" class="sim-btn" data-nivel="rojo" aria-pressed="false">■ Cansancio severo</button>
-      </div>
-    </div>
-
-    <div class="sim-grid">
-      <div class="sim-col">
-        <div class="sim-label"><span>Teléfono de Carlos S.</span><span class="role-tag">Operador</span></div>
-        <div class="phone" aria-hidden="false">
-          <div class="phone-top"><span>06:45</span><span>NUVYRA</span></div>
-          <div class="phone-body">
-            <div class="phone-hi">Hola, Carlos</div>
-            <div class="phone-sub">Resultado de tu evaluación diaria:</div>
-            <div id="sim-persona" class="sim-state s-verde" aria-live="polite">
-              <strong id="sim-p-titulo"></strong>
-              <p id="sim-p-texto"></p>
-            </div>
-            <p id="sim-boton-nota" class="phone-note" hidden></p>
-            <button type="button" id="sim-boton" class="phone-btn">Comenzar turno</button>
-          </div>
+        <div class="tour-controls">
+          <button type="button" id="tour-play" class="tour-play-btn">Reproducir tour automático</button>
+          <button type="button" id="tour-next" class="tour-play-btn">Siguiente etapa →</button>
         </div>
       </div>
+      <div class="tour-progress" aria-hidden="true"><div id="tour-bar" class="tour-progress-fill"></div></div>
 
-      <div class="sim-col">
-        <div class="sim-label"><span>Panel de Marcela R.</span><span class="role-tag">Jefatura directa</span></div>
-        <div class="panel">
-          <div id="sim-banner" class="banner" hidden role="status" aria-live="assertive"></div>
-          <ul class="crew" aria-label="Equipo del turno">
-            <li><span class="dot d-verde" aria-hidden="true"></span><span class="who">Roberto M.<small>06:40 · En rango normal</small></span><span class="pill p-verde">Normal</span></li>
-            <li><span class="dot d-verde" aria-hidden="true"></span><span class="who">Diego P.<small>06:42 · En rango normal</small></span><span class="pill p-verde">Normal</span></li>
-            <li id="sim-fila"><span id="sim-dot" class="dot d-verde" aria-hidden="true"></span><span class="who">Carlos S.<small id="sim-sub-carlos">06:45 · En rango normal</small></span><span id="sim-pill" class="pill p-verde">Normal</span></li>
+      <div class="tour-steps-bar" role="tablist">
+        <button type="button" class="tour-step-btn active" role="tab" aria-selected="true" data-step="0">
+          <strong>01 · Evaluación personal</strong>
+          2 minutos comparados con su propia base
+        </button>
+        <button type="button" class="tour-step-btn" role="tab" aria-selected="false" data-step="1">
+          <strong>02 · Aviso a jefatura</strong>
+          Prioriza quién necesita atención hoy
+        </button>
+        <button type="button" class="tour-step-btn" role="tab" aria-selected="false" data-step="2">
+          <strong>03 · Acción preventiva</strong>
+          Conversación y descanso de 1 hora
+        </button>
+        <button type="button" class="tour-step-btn" role="tab" aria-selected="false" data-step="3">
+          <strong>04 · Caso cerrado</strong>
+          Línea de tiempo y respaldo completo
+        </button>
+      </div>
+
+      <!-- ESCENARIO DE GRAN TAMAÑO (VISTA AMPLIADA DE CADA ETAPA) -->
+      <div class="tour-stage">
+        <div class="tour-canvas" id="tour-canvas" aria-live="polite">
+          <!-- El contenido ampliado se inyecta dinámicamente según la etapa -->
+        </div>
+
+        <div class="tour-explain">
+          <span class="step-num" id="exp-num">Etapa 01 de 04</span>
+          <h3 id="exp-title">Comparación justa contra el propio nivel normal</h3>
+          <p id="exp-desc">Tras 3 días iniciales de calibración, NUVYRA conoce el ritmo habitual de cada trabajador. Si un día su respuesta es más lenta por mal sueño o efecto de la altura, el sistema lo detecta antes de iniciar tareas críticas.</p>
+          <ul class="ticks" id="exp-ticks">
+            <li><svg width="16" height="16"><use href="#tick"/></svg><span>No compara entre compañeros de turno</span></li>
+            <li><svg width="16" height="16"><use href="#tick"/></svg><span>Indicador claro con forma, color y palabra</span></li>
           </ul>
-          <ol id="sim-pasos" class="pasos" hidden>
-            <li id="paso-1">1. Aviso recibido</li>
-            <li id="paso-2">2. Conversación</li>
-            <li id="paso-3">3. Medida registrada</li>
-          </ol>
-          <div id="sim-accion" class="sim-accion" hidden>
-            <p id="sim-s-texto" class="sim-hint" style="margin-bottom:10px"></p>
-            <button type="button" id="sim-visita" class="btn btn-secondary">Registrar conversación con Carlos</button>
-            <div id="sim-sel-wrap" hidden>
-              <label for="sim-sel">Medida preventiva acordada:</label>
-              <select id="sim-sel" class="fld">
-                <option value="">Seleccionar medida...</option>
-                <option>Descanso de 1 hora y reevaluación antes de operar</option>
-                <option>Asignación temporal a tarea sin conducción de equipo</option>
-                <option>Evaluación preventiva en policlínico de faena</option>
-              </select>
-            </div>
-            <p id="sim-ok" class="sim-ok" hidden></p>
-          </div>
-          <p id="sim-s-titulo" class="sim-hint" style="margin-top:12px"></p>
         </div>
       </div>
     </div>
@@ -231,132 +220,111 @@
 </section>
 <script>
 (function(){
-  var N = {
-    verde: {
-      p:["En rango normal","Tu resultado de hoy está dentro de tu referencia habitual. Buen turno."],
-      s:["Equipo en rango normal. Sin alertas pendientes.",""],
-      sub:"06:45 · En rango normal",
-      btn:"Comenzar turno",
-      nota:"",
-      cls:"s-verde", pill:"Normal", pc:"p-verde", dc:"d-verde", acc:false, pause:false
+  var etapas = [
+    {
+      top:"Etapa 1 de 4 · Evaluación diaria frente al propio nivel normal",
+      num:"Etapa 01 de 04",
+      title:"Comparación justa contra el propio nivel normal",
+      desc:"Tras 3 días iniciales de calibración, NUVYRA conoce el ritmo habitual de cada trabajador. Si un día su respuesta es más lenta por mal sueño o efecto de la altura, el sistema lo detecta antes de iniciar tareas críticas.",
+      ticks:["No compara entre compañeros de turno","Indicador claro con forma, color y palabra"],
+      html:
+        '<div class="ui-window-head"><span class="ui-window-brand">NUVYRA · Resultado de la evaluación matutina</span><span class="ui-tag info">Duración: 2 min</span></div>' +
+        '<div class="ui-big-row"><div style="flex:1"><div class="ui-person">Roberto Morales · Mecánico</div><div class="ui-meta">Evaluado 06:40 · Resultado dentro de su referencia personal</div></div><span class="ui-tag ok">● Normal</span></div>' +
+        '<div class="ui-big-row"><div style="flex:1"><div class="ui-person">Luis Araya · Mina rajo</div><div class="ui-meta">Evaluado 06:42 · Levemente bajo su referencia personal</div></div><span class="ui-tag mid">▲ Fatiga moderada</span></div>' +
+        '<div class="ui-big-row highlight"><div style="flex:1"><div class="ui-person">Pedro Soto · Mina rajo</div><div class="ui-meta">Evaluado 06:45 · Muy por debajo de su nivel habitual</div></div><span class="ui-tag bad">■ Fatiga severa</span></div>'
     },
-    amarillo: {
-      p:["Cansancio moderado","Tu resultado estuvo por debajo de tu ritmo habitual. Tu jefatura conversará contigo para organizar la tarea."],
-      s:["Aviso preventivo: cansancio moderado","Conversa con Carlos para verificar cómo se encuentra y definir si requiere una pausa."],
-      sub:"06:45 · Requiere conversación en terreno",
-      btn:"A la espera de conversación",
-      nota:"Esta evaluación es preventiva y no constituye falta laboral.",
-      cls:"s-amarillo", pill:"Aviso", pc:"p-amarillo", dc:"d-amarillo", acc:true, pause:false
+    {
+      top:"Etapa 2 de 4 · Aviso inmediato a la jefatura directa",
+      num:"Etapa 02 de 04",
+      title:"La jefatura recibe el aviso con responsable y plazo",
+      desc:"Cuando Pedro Soto presenta fatiga severa, el sistema abre automáticamente un caso asignado a su jefatura directa (Marcela Rojas) según el organigrama de la empresa.",
+      ticks:["Asignación automática según el área y turno","Plazo claro para la primera atención en terreno"],
+      html:
+        '<div class="ui-window-head"><span class="ui-window-brand">NUVYRA · Casos abiertos del turno</span><span class="ui-tag bad">■ Atención prioritaria</span></div>' +
+        '<div class="ui-big-row highlight"><div style="flex:1"><div class="ui-person">Pedro Soto · Área Mina rajo</div><div class="ui-meta">Responsable asignado: <b>Marcela Rojas</b> (jefatura directa) · Primera atención: dentro de 1 hora</div></div><span class="ui-tag bad">■ Fatiga severa</span></div>' +
+        '<div class="ui-ActionBox"><h4>Acciones disponibles para la jefatura</h4><div style="display:flex;flex-wrap:wrap;gap:8px"><span class="btn btn-primary" style="min-height:38px;font-size:14px;pointer-events:none">Tomar caso</span><span class="btn btn-secondary" style="min-height:38px;font-size:14px;pointer-events:none">Registrar acción preventiva</span><span class="btn btn-secondary" style="min-height:38px;font-size:14px;pointer-events:none">Reasignar encargado</span></div></div>'
     },
-    rojo: {
-      p:["Cansancio severo","Por tu seguridad, aguarda antes de iniciar labores de riesgo. Tu jefatura ya fue notificada."],
-      s:["Alerta prioritaria: cansancio severo","Acércate antes de que inicie tareas críticas para asignarle una pausa de recuperación o ajustar su labor."],
-      sub:"06:45 · Requiere medida preventiva",
-      btn:"Pausa preventiva activa",
-      nota:"Pausa preventiva para evitar incidentes en la operación de equipos.",
-      cls:"s-rojo", pill:"Alerta", pc:"p-rojo", dc:"d-rojo", acc:true, pause:true
+    {
+      top:"Etapa 3 de 4 · Conversación en terreno y medida preventiva",
+      num:"Etapa 03 de 04",
+      title:"Se registra la conversación y el descanso preventivo",
+      desc:"Marcela conversa con Pedro en terreno y acuerdan una pausa de recuperación de una hora antes de operar. La plataforma solicita dejar registrada esta acción antes de permitir el cierre.",
+      ticks:["Enfoque 100% preventivo, nunca sancionatorio","Registro rápido de la medida acordada en terreno"],
+      html:
+        '<div class="ui-window-head"><span class="ui-window-brand">NUVYRA · Registro de medida preventiva</span><span class="ui-tag info">En atención</span></div>' +
+        '<div class="ui-big-row"><div style="flex:1"><div class="ui-person">Tipo de acción: Contacto con la persona</div><div class="ui-meta">Detalle registrado: <b>«Conversación con la persona y descanso de una hora»</b></div></div><span class="ui-tag ok">Acción registrada</span></div>' +
+        '<div class="ui-ActionBox"><h4>Nota de cierre verificada</h4><p style="font-size:15px;color:var(--ink);background:#fff;padding:10px 12px;border:1px solid var(--line);border-radius:4px">«Volvió a su nivel normal en la medición siguiente»</p></div>'
+    },
+    {
+      top:"Etapa 4 de 4 · Caso cerrado con línea de tiempo verificable",
+      num:"Etapa 04 de 04",
+      title:"Respaldo completo para el trabajador y la empresa",
+      desc:"Una vez que Pedro retoma su nivel normal, el caso queda cerrado. Toda la secuencia queda guardada con fecha, hora y encargado, lista para demostrar cumplimiento preventivo ante empresas mandantes.",
+      ticks:["Línea de tiempo protegida contra alteraciones","Demuestra gestión preventiva real en faena"],
+      html:
+        '<div class="ui-window-head"><span class="ui-window-brand">NUVYRA · Caso cerrado con respaldo</span><span class="ui-tag ok">● Cerrado</span></div>' +
+        '<ul class="ui-timeline">' +
+          '<li><b>Caso abierto · Alerta de fatiga severa</b><small>Hoy 06:45 · Detectado en evaluación matutina</small></li>' +
+          '<li><b>Responsable asignado automáticamente</b><small>Hoy 06:45 · Marcela Rojas (jefatura directa, Mina rajo)</small></li>' +
+          '<li><b>Acción preventiva registrada: Contacto con la persona</b><small>Hoy 07:00 · Conversación con la persona y descanso de una hora</small></li>' +
+          '<li><b>Caso cerrado tras recuperación</b><small>Hoy 08:05 · Volvió a su nivel normal en la medición siguiente</small></li>' +
+        '</ul>'
     }
-  };
+  ];
+
+  var cur = 0, timer = null;
+  var btns = document.querySelectorAll(".tour-step-btn");
   var $ = function(id){ return document.getElementById(id); };
-  var btns = document.querySelectorAll(".sim-btn"), cur = "verde";
-  var scenes = document.querySelectorAll(".vid-scene"), timer = null;
 
-  function setPaso(n){ for (var i=1;i<=3;i++){ $("paso-"+i).className = i<=n ? "hecho" : ""; } }
-  function pintar(k){
-    cur = k; var n = N[k];
-    $("sim-persona").className = "sim-state " + n.cls;
-    $("sim-p-titulo").textContent = n.p[0]; $("sim-p-texto").textContent = n.p[1];
-    $("sim-pill").textContent = n.pill; $("sim-pill").className = "pill " + n.pc; $("sim-dot").className = "dot " + n.dc;
-    $("sim-sub-carlos").textContent = n.sub;
-    $("sim-fila").className = n.acc ? "fila-alerta" : "";
-    var b = $("sim-boton");
-    b.textContent = n.btn;
-    b.className = n.pause ? "phone-btn pause-mode" : "phone-btn";
-    var nota = $("sim-boton-nota");
-    if (n.nota) { nota.hidden = false; nota.textContent = n.nota; } else { nota.hidden = true; }
-    var banner = $("sim-banner");
-    if (n.acc) { banner.hidden = false; banner.className = "banner b-" + k; banner.textContent = n.s[0]; } else { banner.hidden = true; }
-    $("sim-s-titulo").textContent = n.acc ? "" : n.s[0];
-    $("sim-s-texto").textContent = n.s[1];
-    $("sim-accion").hidden = !n.acc; $("sim-pasos").hidden = !n.acc;
-    $("sim-visita").hidden = false; $("sim-sel-wrap").hidden = true; $("sim-sel").value = ""; $("sim-ok").hidden = true;
-    setPaso(n.acc ? 1 : 0);
-    btns.forEach(function(x){ x.setAttribute("aria-pressed", x.getAttribute("data-nivel") === k ? "true" : "false"); });
+  function renderStep(idx){
+    cur = idx;
+    var e = etapas[idx];
+    btns.forEach(function(b, i){
+      b.className = i === idx ? "tour-step-btn active" : "tour-step-btn";
+      b.setAttribute("aria-selected", i === idx ? "true" : "false");
+    });
+    $("tour-bar").style.width = ((idx + 1) * 25) + "%";
+    $("tour-top-label").textContent = e.top;
+    $("exp-num").textContent = e.num;
+    $("exp-title").textContent = e.title;
+    $("exp-desc").textContent = e.desc;
+    $("tour-canvas").innerHTML = e.html;
+    $("exp-ticks").innerHTML = e.ticks.map(function(t){
+      return '<li><svg width="16" height="16"><use href="#tick"/></svg><span>' + t + '</span></li>';
+    }).join("");
   }
 
-  function activarEscena(idx){
-    scenes.forEach(function(s, i){ s.className = i === idx ? "vid-scene active" : "vid-scene"; });
-    $("vid-fill").style.width = ((idx + 1) * 25) + "%";
-    if (idx === 0) {
-      pintar("verde");
-      $("vid-caption").textContent = "Paso 1 de 4: El trabajador realiza su evaluación en 2 minutos y obtiene un resultado dentro de su rango normal.";
-    } else if (idx === 1) {
-      pintar("amarillo");
-      $("vid-caption").textContent = "Paso 2 de 4: Si presenta cansancio moderado, el sistema avisa a su jefatura directa para conversar en terreno.";
-    } else if (idx === 2) {
-      pintar("rojo");
-      $("vid-caption").textContent = "Paso 3 de 4: Ante cansancio severo, se activa una pausa preventiva antes de operar maquinaria.";
-    } else if (idx === 3) {
-      pintar("rojo");
-      $("sim-visita").hidden = true;
-      $("sim-sel-wrap").hidden = false;
-      $("sim-sel").value = "Descanso de 1 hora y reevaluación antes de operar";
-      setPaso(3);
-      $("sim-ok").textContent = "Medida registrada: Descanso de 1 hora y reevaluación antes de operar.";
-      $("sim-ok").hidden = false;
-      $("sim-pill").textContent = "Atendido";
-      $("sim-pill").className = "pill p-seg";
-      $("sim-sub-carlos").textContent = "Descanso de 1 hora asignado";
-      $("vid-caption").textContent = "Paso 4 de 4: La jefatura registra el descanso de 1 hora y la gestión queda respaldada con fecha y hora.";
-    }
-  }
-
-  scenes.forEach(function(s, i){
-    s.addEventListener("click", function(){
-      if (timer) { clearInterval(timer); timer = null; $("vid-btn").textContent = "Reproducir recorrido automático"; }
-      activarEscena(i);
+  btns.forEach(function(b, i){
+    b.addEventListener("click", function(){
+      if (timer) { clearInterval(timer); timer = null; $("tour-play").textContent = "Reproducir tour automático"; }
+      renderStep(i);
     });
   });
 
-  $("vid-btn").addEventListener("click", function(){
+  $("tour-next").addEventListener("click", function(){
+    if (timer) { clearInterval(timer); timer = null; $("tour-play").textContent = "Reproducir tour automático"; }
+    renderStep((cur + 1) % etapas.length);
+  });
+
+  $("tour-play").addEventListener("click", function(){
     if (timer) {
       clearInterval(timer); timer = null;
-      $("vid-btn").textContent = "Reproducir recorrido automático";
+      $("tour-play").textContent = "Reproducir tour automático";
       return;
     }
-    var step = 0;
-    $("vid-btn").textContent = "Pausar recorrido";
-    activarEscena(0);
+    $("tour-play").textContent = "Pausar tour";
+    renderStep(0);
     timer = setInterval(function(){
-      step++;
-      if (step <= 3) {
-        activarEscena(step);
+      if (cur < 3) {
+        renderStep(cur + 1);
       } else {
         clearInterval(timer); timer = null;
-        $("vid-btn").textContent = "Repetir recorrido automático";
+        $("tour-play").textContent = "Repetir tour automático";
       }
-    }, 3400);
+    }, 3800);
   });
 
-  btns.forEach(function(x){
-    x.addEventListener("click", function(){
-      if (timer) { clearInterval(timer); timer = null; $("vid-btn").textContent = "Reproducir recorrido automático"; }
-      pintar(x.getAttribute("data-nivel"));
-    });
-  });
-  $("sim-visita").addEventListener("click", function(){ $("sim-visita").hidden = true; $("sim-sel-wrap").hidden = false; setPaso(2); });
-  $("sim-sel").addEventListener("change", function(){
-    var s = $("sim-sel");
-    if (s.value) {
-      setPaso(3);
-      $("sim-ok").textContent = "Medida registrada: " + s.value + ".";
-      $("sim-ok").hidden = false;
-      $("sim-pill").textContent = "Atendido";
-      $("sim-pill").className = "pill p-seg";
-      $("sim-sub-carlos").textContent = "Medida preventiva aplicada";
-    }
-  });
-  pintar("verde");
+  renderStep(0);
 })();
 </script>
 
@@ -366,7 +334,7 @@
     <div class="head">
       <div class="eyebrow">Ventajas operativas</div>
       <h2>Por qué las empresas eligen NUVYRA.</h2>
-      <p class="lead">Comparación directa frente a formularios manuales y sistemas de cámaras en cabina.</p>
+      <p class="lead">Comparación directa frente a formularios en papel y sistemas de cámaras en cabina.</p>
     </div>
 
     <div class="vs-table" role="region" aria-label="Comparativa de alternativas">
@@ -379,149 +347,189 @@
       <div class="vs-row">
         <div class="vs-cell feat">Momento de detección</div>
         <div class="vs-cell hide-sm">Revisión tardía después de iniciado el turno</div>
-        <div class="vs-cell hide-sm">Detecta recién cuando el operador ya está conduciendo</div>
+        <div class="vs-cell hide-sm">Detecta recién cuando el operador ya va conduciendo</div>
         <div class="vs-cell win">Antes de iniciar la tarea (en 2 minutos)</div>
       </div>
       <div class="vs-row">
         <div class="vs-cell feat">Inversión en equipos</div>
-        <div class="vs-cell hide-sm">Tiempo administrativo pasando planillas</div>
+        <div class="vs-cell hide-sm">Horas administrativas pasando planillas</div>
         <div class="vs-cell hide-sm">Alto costo de compra y mantención por vehículo</div>
-        <div class="vs-cell win">Sin inversión en hardware (funciona en el celular)</div>
+        <div class="vs-cell win">Sin inversión en hardware (funciona en el navegador o teléfono)</div>
       </div>
       <div class="vs-row">
-        <div class="vs-cell feat">Aceptación del equipo</div>
-        <div class="vs-cell hide-sm">Respuestas subjetivas por cumplir</div>
-        <div class="vs-cell hide-sm">Sensación de grabación continua en cabina</div>
-        <div class="vs-cell win">Objetivo, breve y enfocado en prevención, no en sanción</div>
+        <div class="vs-cell feat">Recepción de los trabajadores</div>
+        <div class="vs-cell hide-sm">Se llena por cumplir</div>
+        <div class="vs-cell hide-sm">Incomodidad por grabación continua en cabina</div>
+        <div class="vs-cell win">Breve, objetivo y enfocado en prevención, no en sanciones</div>
       </div>
       <div class="vs-row">
-        <div class="vs-cell feat">Acompañamiento técnico</div>
-        <div class="vs-cell hide-sm">Sin respaldo especializado</div>
-        <div class="vs-cell hide-sm">Solo proveedor tecnológico</div>
-        <div class="vs-cell win">Incluye especialistas en Medicina de Altura y SERNAGEOMIN</div>
+        <div class="vs-cell feat">Respaldo profesional</div>
+        <div class="vs-cell hide-sm">Sin asesoría técnica</div>
+        <div class="vs-cell hide-sm">Solo proveedor de equipos</div>
+        <div class="vs-cell win">Incluye especialistas del área de la salud y prevención SERNAGEOMIN</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VISOR INTERACTIVO DE PANTALLAS REALES (TABS) -->
+<!-- GALERÍA DE PANTALLAS REALES A ANCHO COMPLETO CON LUPA / PANTALLA COMPLETA -->
 <section class="white" id="pantallas-reales">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">Plataforma actual</div>
-      <h2>Recorre las pantallas reales de la aplicación.</h2>
-      <p class="lead">Selecciona cada vista para revisar cómo opera hoy el sistema.</p>
+      <div class="eyebrow">Capturas reales de la aplicación</div>
+      <h2>Revisa las pantallas reales en tamaño grande.</h2>
+      <p class="lead">Selecciona cada vista o haz clic sobre la imagen para abrirla a pantalla completa.</p>
     </div>
 
     <div class="shot-tabs" role="tablist" aria-label="Vistas de la aplicación">
       <button type="button" class="shot-tab" role="tab" aria-selected="true" data-shot="0">01 · Alertas del turno</button>
       <button type="button" class="shot-tab" role="tab" aria-selected="false" data-shot="1">02 · Registro de descanso</button>
       <button type="button" class="shot-tab" role="tab" aria-selected="false" data-shot="2">03 · Caso cerrado y respaldo</button>
-      <button type="button" class="shot-tab" role="tab" aria-selected="false" data-shot="3">04 · Áreas y equipos</button>
+      <button type="button" class="shot-tab" role="tab" aria-selected="false" data-shot="3">04 · Áreas y organigrama</button>
     </div>
 
-    <div class="feature" style="margin-bottom:0">
-      <div class="text">
-        <span class="badge now" style="margin-bottom:12px">Operativo hoy</span>
-        <h3 id="shot-title">Avisos ordenados por prioridad</h3>
-        <p id="shot-desc">La jefatura visualiza de inmediato quién requiere atención en su área antes de iniciar labores críticas.</p>
-        <ul class="ticks" id="shot-list">
-          <li><svg width="16" height="16"><use href="#tick"/></svg><span>Prioriza automáticamente los casos de fatiga severa y moderada</span></li>
-          <li><svg width="16" height="16"><use href="#tick"/></svg><span>Asigna al responsable directo según el organigrama</span></li>
-          <li><svg width="16" height="16"><use href="#tick"/></svg><span>Accesible desde computador y teléfono móvil</span></li>
-        </ul>
-        <div style="margin-top:22px">
-          <a class="btn btn-secondary" href="producto.html">Ver detalle del producto →</a>
+    <div class="zoom-showcase">
+      <div class="zoom-head">
+        <div>
+          <h3 id="shot-title">01 · Lista de casos y alertas del turno</h3>
+          <p id="shot-desc">La jefatura visualiza de inmediato quién requiere atención en su área antes de iniciar labores críticas.</p>
+        </div>
+        <button type="button" id="shot-open-btn" class="btn btn-secondary">Ampliar a pantalla completa</button>
+      </div>
+      <div class="zoom-body">
+        <div class="zoom-img-wrap" id="shot-click-area" role="button" tabindex="0" aria-label="Ampliar imagen a pantalla completa">
+          <img id="shot-img" src="img/app-casos-lista.png" width="1440" height="900" alt="Pantalla real de NUVYRA">
+          <span class="zoom-btn-overlay">Clic para ampliar imagen</span>
+        </div>
+        <div class="callouts" id="shot-callouts">
+          <div class="callout"><b>Prioridad clara</b>Ordena automáticamente los casos de fatiga severa y moderada.</div>
+          <div class="callout"><b>Responsable directo</b>Asigna al supervisor correspondiente según el área.</div>
+          <div class="callout"><b>Filtros rápidos</b>Separa tus casos asignados, abiertos, vencidos y cerrados.</div>
         </div>
       </div>
-      <figure style="margin:0">
-        <div class="frame">
-          <div class="bar" aria-hidden="true">
-            <div class="bar-dots"><i></i><i></i><i></i></div>
-            <span class="bar-title" id="shot-bar">NUVYRA · Lista de casos</span>
-          </div>
-          <img id="shot-img" src="img/app-casos-lista.png" width="1440" height="900" alt="Pantalla real de NUVYRA">
-        </div>
-      </figure>
     </div>
   </div>
 </section>
+
+<!-- LIGHTBOX PARA VER CAPTURAS DE CERCA -->
+<div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Vista ampliada de pantalla">
+  <div class="lightbox-bar">
+    <strong id="lightbox-title">Vista ampliada</strong>
+    <button type="button" id="lightbox-close" class="lightbox-close">Cerrar vista ampliada (Esc)</button>
+  </div>
+  <div class="lightbox-img-box">
+    <img id="lightbox-img" src="img/app-casos-lista.png" alt="Captura ampliada de NUVYRA">
+  </div>
+</div>
+
 <script>
 (function(){
   var shots = [
     {
-      t:"Avisos ordenados por prioridad",
+      t:"01 · Lista de casos y alertas del turno",
       d:"La jefatura visualiza de inmediato quién requiere atención en su área antes de iniciar labores críticas.",
-      b:"NUVYRA · Lista de casos",
       img:"img/app-casos-lista.png",
-      items:["Prioriza automáticamente los casos de fatiga severa y moderada","Asigna al responsable directo según el organigrama","Accesible desde computador y teléfono móvil"]
+      c:[
+        ["Prioridad clara","Ordena automáticamente los casos de fatiga severa y moderada."],
+        ["Responsable directo","Asigna al supervisor correspondiente según el área."],
+        ["Filtros rápidos","Separa tus casos asignados, abiertos, vencidos y cerrados."]
+      ]
     },
     {
-      t:"Registro de descanso o cambio de tarea",
-      d:"Tras conversar con el trabajador, el supervisor registra la medida preventiva (descanso, rehidratación o ajuste de tarea).",
-      b:"NUVYRA · Registro de acción preventiva",
+      t:"02 · Registro de conversación y descanso preventivo",
+      d:"Tras conversar con el trabajador, el supervisor registra la medida preventiva (descanso, hidratación o cambio de tarea).",
       img:"img/app-caso-acompanamiento.png",
-      items:["Exige al menos una medida preventiva antes de cerrar el caso","Deja constancia clara del estado en que queda la persona","Proceso rápido pensado para terreno"]
+      c:[
+        ["Acción obligatoria","Solicita al menos una medida preventiva registrada antes de cerrar."],
+        ["Nota de cierre","Deja constancia de cómo evolucionó la persona."],
+        ["Rápido en terreno","Se completa en segundos desde el computador o teléfono."]
+      ]
     },
     {
-      t:"Respaldo completo con línea de tiempo",
-      d:"Una vez que el trabajador retoma su nivel normal, el caso queda cerrado con el historial íntegro de fechas y horas.",
-      b:"NUVYRA · Caso cerrado con respaldo",
+      t:"03 · Caso cerrado con línea de tiempo completa",
+      d:"Cuando el trabajador retoma su nivel normal, el caso queda cerrado con historial íntegro de fechas y horas.",
       img:"img/app-caso-resuelto.png",
-      items:["Línea de tiempo verificable ante empresas mandantes","Protege tanto al trabajador como a la operación","Historial protegido contra modificaciones"]
+      c:[
+        ["Trazabilidad completa","Registra apertura, asignación, acción tomada y cierre."],
+        ["Inalterable","Un caso cerrado no admite modificaciones posteriores."],
+        ["Respaldo ante mandantes","Demuestra gestión preventiva real frente a auditorías."]
+      ]
     },
     {
-      t:"Control de cumplimiento por área y turno",
-      d:"Permite revisar el avance diario de evaluaciones por gerencia, área y equipo de trabajo.",
-      b:"NUVYRA · Áreas y organigrama",
+      t:"04 · Cumplimiento diario por áreas y equipos",
+      d:"Permite revisar el avance de evaluaciones por gerencia, área operativa y estructura del turno.",
       img:"img/app-areas-organigrama.webp",
-      items:["Estructura organizacional por áreas operativas","Meta diaria configurable por empresa","Permisos de visualización según el rol de cada usuario"]
+      c:[
+        ["Mapa por áreas","Mina rajo, Planta concentradora, Mantenimiento."],
+        ["Meta de cumplimiento","Porcentaje diario visible por área."],
+        ["Alcance según rol","Cada jefatura visualiza únicamente a su equipo."]
+      ]
     }
   ];
+  var $ = function(id){ return document.getElementById(id); };
   var tabs = document.querySelectorAll(".shot-tab");
   tabs.forEach(function(btn){
     btn.addEventListener("click", function(){
       var idx = parseInt(btn.getAttribute("data-shot"), 10);
       var s = shots[idx];
       tabs.forEach(function(t, i){ t.setAttribute("aria-selected", i === idx ? "true" : "false"); });
-      document.getElementById("shot-title").textContent = s.t;
-      document.getElementById("shot-desc").textContent = s.d;
-      document.getElementById("shot-bar").textContent = s.b;
-      document.getElementById("shot-img").src = s.img;
-      var ul = document.getElementById("shot-list");
-      ul.innerHTML = s.items.map(function(txt){
-        return '<li><svg width="16" height="16"><use href="#tick"/></svg><span>' + txt + '</span></li>';
+      $("shot-title").textContent = s.t;
+      $("shot-desc").textContent = s.d;
+      $("shot-img").src = s.img;
+      $("shot-callouts").innerHTML = s.c.map(function(pair){
+        return '<div class="callout"><b>' + pair[0] + '</b>' + pair[1] + '</div>';
       }).join("");
     });
   });
+
+  function abrirZoom(){
+    $("lightbox-img").src = $("shot-img").src;
+    $("lightbox-title").textContent = $("shot-title").textContent;
+    $("lightbox").hidden = false;
+  }
+  function cerrarZoom(){ $("lightbox").hidden = true; }
+  $("shot-open-btn").addEventListener("click", abrirZoom);
+  $("shot-click-area").addEventListener("click", abrirZoom);
+  $("lightbox-close").addEventListener("click", cerrarZoom);
+  $("lightbox").addEventListener("click", function(e){ if (e.target === $("lightbox")) cerrarZoom(); });
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") cerrarZoom(); });
 })();
 </script>
 
-<!-- LOS 3 PILARES DE SERVICIO -->
+<!-- LOS 3 PILARES DE SERVICIO (NOMBRES PROTEGIDOS Y BOTONES DE SOLICITUD DIRECTA) -->
 <section id="solucion-integral">
   <div class="wrap">
     <div class="head">
-      <div class="eyebrow">Soluciones para tu operación</div>
-      <h2>Plataforma digital y consultoría especializada.</h2>
+      <div class="eyebrow">Servicios para tu operación</div>
+      <h2>Contrata la plataforma o solicita asesoría especializada.</h2>
     </div>
     <div class="three">
       <div class="card">
-        <span class="num">01 · Plataforma</span>
-        <h3>Software NUVYRA</h3>
-        <p>Evaluación diaria de 2 minutos en el celular, alertas tempranas para supervisores y respaldo de la gestión preventiva.</p>
-        <p style="margin-top:14px"><a href="producto.html"><strong>Ver el producto →</strong></a></p>
+        <span class="num">01 · Software preventivo</span>
+        <h3>Plataforma NUVYRA</h3>
+        <p>Evaluación diaria de 2 minutos, alertas tempranas para supervisores y respaldo de las medidas preventivas tomadas en el turno.</p>
+        <div class="prof-actions" style="margin-top:auto">
+          <a class="btn btn-primary" href="contacto.html?servicio=Presupuesto%20Plataforma%20NUVYRA">Solicitar presupuesto</a>
+          <a class="btn btn-secondary" href="producto.html">Ver detalles</a>
+        </div>
       </div>
       <div class="card">
-        <span class="num">02 · Salud ocupacional</span>
-        <h3>Medicina de Altura (Hipoxia)</h3>
-        <p>Protocolos de trabajo sobre 3.000 m s. n. m. y capacitación con <b>Scarlett Ramírez Aguilera</b> (Tecnóloga Médica U. de Antofagasta · Medicina de Altura U. de Chile).</p>
-        <p style="margin-top:14px"><a href="servicios.html#altura"><strong>Ver consultoría →</strong></a></p>
+        <span class="num">02 · Área de la Salud</span>
+        <h3>Salud en Altura Geográfica (Hipoxia)</h3>
+        <p>Protocolos de hipoxia hipobárica (&gt;3.000 m s. n. m.) y capacitación a cargo de <b>Experta del Área de la Salud</b> (Tecnóloga Médica U. de Antofagasta · Especialización en Altura U. de Chile).</p>
+        <div class="prof-actions" style="margin-top:auto">
+          <a class="btn btn-primary" href="contacto.html?servicio=Consultoria%20Salud%20en%20Altura%20(Hipoxia)">Solicitar servicio o cita</a>
+          <a class="btn btn-secondary" href="servicios.html#altura">Ver alcance</a>
+        </div>
       </div>
       <div class="card">
-        <span class="num">03 · Prevención minera</span>
+        <span class="num">03 · Prevención Minera</span>
         <h3>Carpetas de Arranque SERNAGEOMIN</h3>
-        <p>Preparación de carpetas de arranque, matrices de riesgo y procedimientos con <b>Tiaren Ramírez Aguilera</b> (Ingeniera en Prevención de Riesgos SERNAGEOMIN).</p>
-        <p style="margin-top:14px"><a href="servicios.html#seguridad-industrial"><strong>Ver asesoría minera →</strong></a></p>
+        <p>Armado de carpetas de arranque, matrices IPER y procedimientos a cargo de <b>Ingeniera en Prevención de Riesgos SERNAGEOMIN</b>.</p>
+        <div class="prof-actions" style="margin-top:auto">
+          <a class="btn btn-primary" href="contacto.html?servicio=Carpetas%20de%20Arranque%20y%20Prevencion%20SERNAGEOMIN">Solicitar servicio o cita</a>
+          <a class="btn btn-secondary" href="servicios.html#seguridad-industrial">Ver alcance</a>
+        </div>
       </div>
     </div>
   </div>
@@ -529,10 +537,10 @@
 
 <section class="band" aria-labelledby="band-t">
   <div class="wrap"><div class="box">
-    <div><h2 id="band-t">¿Conversamos sobre tu empresa o faena?</h2><p>Agenda una demostración breve o solicita una cotización directa.</p></div>
+    <div><h2 id="band-t">¿Necesitas una demostración o un presupuesto a medida?</h2><p>Agenda una reunión breve o consúltanos directamente según los requerimientos de tu faena.</p></div>
     <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <a class="btn btn-primary" href="contacto.html">Solicitar demostración</a>
-      <a class="btn btn-secondary" href="https://wa.me/56974578653?text=Hola%2C%20quiero%20conocer%20NUVYRA" target="_blank" rel="noopener">WhatsApp +56 9 7457 8653</a>
+      <a class="btn btn-primary" href="contacto.html">Agendar cita o pedir presupuesto</a>
+      <a class="btn btn-secondary" href="https://wa.me/56974578653?text=Hola%2C%20quiero%20hacer%20una%20consulta%20sobre%20NUVYRA" target="_blank" rel="noopener">WhatsApp +56 9 7457 8653</a>
     </div>
   </div></div>
 </section>
@@ -542,20 +550,21 @@
     <div class="row">
       <div>
         <a class="brand" href="index.html"><svg width="30" height="30"><use href="#mark"/></svg><span>NUVYRA</span></a>
-        <p style="margin-top:12px;max-width:36ch;font-size:16px">Prevención de fatiga, medicina de altura y gestión de seguridad minera.</p>
+        <p style="margin-top:12px;max-width:36ch;font-size:16px">Prevención de fatiga, salud en altura geográfica y gestión de seguridad minera.</p>
       </div>
       <ul aria-label="Enlaces">
         <li><a href="producto.html">Producto</a></li>
         <li><a href="servicios.html">Servicios</a></li>
         <li><a href="seguridad.html">Seguridad</a></li>
         <li><a href="nosotros.html">Quiénes somos</a></li>
+        <li><a href="politicas.html">Políticas y privacidad</a></li>
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="login.html">Ingresar</a></li>
         <li><a href="mailto:contacto@nuvyra.cl">contacto@nuvyra.cl</a></li>
         <li><a href="https://wa.me/56974578653" target="_blank" rel="noopener">+56 9 7457 8653</a></li>
       </ul>
     </div>
-    <p class="small">© 2026 NUVYRA. Las pantallas mostradas corresponden a la aplicación con datos de ejemplo.</p>
+    <p class="small">© 2026 NUVYRA. Las pantallas mostradas corresponden a la aplicación con datos de ejemplo. Revisa nuestras <a href="politicas.html">políticas de privacidad y uso preventivo</a>.</p>
   </div>
 </footer>
 </body>
