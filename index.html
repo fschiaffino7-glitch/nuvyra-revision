@@ -216,7 +216,7 @@
         </button>
         <button type="button" class="tour-step-btn" role="tab" aria-selected="false" data-step="2">
           <strong>03 · Acción preventiva</strong>
-          Conversación y descanso de 1 hora
+          Pausa activa o descanso según protocolo
         </button>
         <button type="button" class="tour-step-btn" role="tab" aria-selected="false" data-step="3">
           <strong>04 · Caso cerrado</strong>
@@ -262,23 +262,23 @@
       top:"Etapa 2 de 4 · Aviso inmediato a la jefatura directa",
       num:"Etapa 02 de 04",
       title:"La jefatura recibe el aviso con responsable y plazo",
-      desc:"Cuando Pedro Soto presenta fatiga severa, el sistema abre automáticamente un caso asignado a su jefatura directa (Marcela Rojas) según el organigrama de la empresa.",
-      ticks:["Asignación automática según el área y turno","Plazo claro para la primera atención en terreno"],
+      desc:"Cuando Pedro Soto presenta fatiga severa, el sistema abre automáticamente un caso asignado a su jefatura directa (Marcela Rojas) según el organigrama y los plazos configurados por la empresa.",
+      ticks:["Asignación automática según el área y turno","Plazo de atención configurable según el protocolo de cada cliente"],
       html:
         '<div class="ui-window-head"><span class="ui-window-brand">NUVYRA · Casos abiertos del turno</span><span class="ui-tag bad">■ Atención prioritaria</span></div>' +
-        '<div class="ui-big-row highlight"><div style="flex:1"><div class="ui-person">Pedro Soto · Área Mina rajo</div><div class="ui-meta">Responsable asignado: <b>Marcela Rojas</b> (jefatura directa) · Primera atención: dentro de 1 hora</div></div><span class="ui-tag bad">■ Fatiga severa</span></div>' +
+        '<div class="ui-big-row highlight"><div style="flex:1"><div class="ui-person">Pedro Soto · Área Mina rajo</div><div class="ui-meta">Responsable asignado: <b>Marcela Rojas</b> (jefatura directa) · Plazo según protocolo interno</div></div><span class="ui-tag bad">■ Fatiga severa</span></div>' +
         '<div class="ui-ActionBox"><h4>Acciones disponibles para la jefatura</h4><div style="display:flex;flex-wrap:wrap;gap:8px"><span class="btn btn-primary" style="min-height:38px;font-size:14px;pointer-events:none">Tomar caso</span><span class="btn btn-secondary" style="min-height:38px;font-size:14px;pointer-events:none">Registrar acción preventiva</span><span class="btn btn-secondary" style="min-height:38px;font-size:14px;pointer-events:none">Reasignar encargado</span></div></div>'
     },
     {
       top:"Etapa 3 de 4 · Conversación en terreno y medida preventiva",
       num:"Etapa 03 de 04",
-      title:"Se registra la conversación y el descanso preventivo",
-      desc:"Marcela conversa con Pedro en terreno y acuerdan una pausa de recuperación de una hora antes de operar. La plataforma solicita dejar registrada esta acción antes de permitir el cierre.",
-      ticks:["Enfoque 100% preventivo, nunca sancionatorio","Registro rápido de la medida acordada en terreno"],
+      title:"Se registra la conversación y la medida definida por la empresa",
+      desc:"Marcela conversa con Pedro en terreno y aplican la medida preventiva que establece el procedimiento de su empresa (como una pausa activa, un descanso preventivo o ajuste de tarea). La plataforma solicita registrar esta acción antes del cierre.",
+      ticks:["El tipo de pausa o descanso lo define el procedimiento de cada empresa","Registro rápido de la medida acordada en terreno"],
       html:
         '<div class="ui-window-head"><span class="ui-window-brand">NUVYRA · Registro de medida preventiva</span><span class="ui-tag info">En atención</span></div>' +
-        '<div class="ui-big-row"><div style="flex:1"><div class="ui-person">Tipo de acción: Contacto con la persona</div><div class="ui-meta">Detalle registrado: <b>«Conversación con la persona y descanso de una hora»</b></div></div><span class="ui-tag ok">Acción registrada</span></div>' +
-        '<div class="ui-ActionBox"><h4>Nota de cierre verificada</h4><p style="font-size:15px;color:var(--ink);background:#fff;padding:10px 12px;border:1px solid var(--line);border-radius:4px">«Volvió a su nivel normal en la medición siguiente»</p></div>'
+        '<div class="ui-big-row"><div style="flex:1"><div class="ui-person">Tipo de acción: Contacto con la persona</div><div class="ui-meta">Detalle registrado: <b>«Conversación en terreno y pausa preventiva según procedimiento interno»</b></div></div><span class="ui-tag ok">Acción registrada</span></div>' +
+        '<div class="ui-ActionBox"><h4>Nota de cierre verificada</h4><p style="font-size:15px;color:var(--ink);background:#fff;padding:10px 12px;border:1px solid var(--line);border-radius:4px">«Realizó pausa de recuperación y volvió a su nivel normal en la medición siguiente»</p></div>'
     },
     {
       top:"Etapa 4 de 4 · Caso cerrado con línea de tiempo verificable",
@@ -291,8 +291,8 @@
         '<ul class="ui-timeline">' +
           '<li><b>Caso abierto · Alerta de fatiga severa</b><small>Hoy 06:45 · Detectado en evaluación matutina</small></li>' +
           '<li><b>Responsable asignado automáticamente</b><small>Hoy 06:45 · Marcela Rojas (jefatura directa, Mina rajo)</small></li>' +
-          '<li><b>Acción preventiva registrada: Contacto con la persona</b><small>Hoy 07:00 · Conversación con la persona y descanso de una hora</small></li>' +
-          '<li><b>Caso cerrado tras recuperación</b><small>Hoy 08:05 · Volvió a su nivel normal en la medición siguiente</small></li>' +
+          '<li><b>Acción preventiva registrada: Contacto con la persona</b><small>Hoy 07:00 · Conversación en terreno y pausa activa / descanso según protocolo</small></li>' +
+          '<li><b>Caso cerrado tras recuperación</b><small>Hoy · Volvió a su nivel normal en la medición siguiente</small></li>' +
         '</ul>'
     }
   ];
