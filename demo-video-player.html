@@ -620,28 +620,59 @@
       <div class="card">
         <div class="card-header">
           <div>
-            <span class="step-tag">Paso 1 de 5 · Identificación del operador</span>
+            <span class="step-tag">Paso 1 de 5 · Ficha precargada y confirmación de turno</span>
             <h1 class="card-title">Registro de Inicio de Jornada y Confirmación de Turno</h1>
-            <p class="card-sub">Antes de iniciar la evaluación diaria, el trabajador valida su turno, equipo asignado y aviso de uso preventivo.</p>
+            <p class="card-sub">Los datos personales, cargo y empresa se cargan automáticamente desde la cuenta creada. El trabajador solo indica su turno (Turno A o B) y equipo del día.</p>
           </div>
           <div style="text-align:right;font-size:15px;color:#4b5563">
             <div>Fecha: <strong>26/10/2026 · 07:42 hrs</strong></div>
-            <div>Faena: <strong>Operaciones Rajo Norte</strong></div>
+            <div>Estado de cuenta: <strong style="color:#1f7a4a">✓ Ficha de alta verificada</strong></div>
           </div>
         </div>
 
+        <!-- Bloque superior: Datos automáticos de la cuenta (en casillas independientes) -->
+        <div style="background:#f8fafc;border:1px solid #cbd5e1;border-radius:8px;padding:16px 22px;margin-bottom:20px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <span style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#475569">
+              Datos cargados automáticamente desde la ficha de creación de cuenta
+            </span>
+            <span style="font-size:13px;font-weight:600;color:#1d5fbf;background:#eef4fc;border:1px solid #bfd6f6;padding:2px 10px;border-radius:4px">
+              Precargado por el sistema · Solo lectura
+            </span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:16px">
+            <div>
+              <label class="field-label" style="font-size:14px;color:#475569;margin-bottom:5px">Nombre del trabajador</label>
+              <div class="field-input" style="height:42px;font-size:16px;background:#eef2f6;border-color:#cbd5e1;color:#0d1117;font-weight:600">
+                Carlos Andrés Muñoz Rojas
+              </div>
+            </div>
+            <div>
+              <label class="field-label" style="font-size:14px;color:#475569;margin-bottom:5px">Cargo registrado</label>
+              <div class="field-input" style="height:42px;font-size:16px;background:#eef2f6;border-color:#cbd5e1;color:#0d1117;font-weight:600">
+                Operador Camión Extracción
+              </div>
+            </div>
+            <div>
+              <label class="field-label" style="font-size:14px;color:#475569;margin-bottom:5px">Código de empresa</label>
+              <div class="field-input" style="height:42px;font-size:16px;background:#eef2f6;border-color:#cbd5e1;color:#0d1117;font-weight:600">
+                ANDES · Minera Andes SpA
+              </div>
+            </div>
+            <div>
+              <label class="field-label" style="font-size:14px;color:#475569;margin-bottom:5px">Área operativa</label>
+              <div class="field-input" style="height:42px;font-size:16px;background:#eef2f6;border-color:#cbd5e1;color:#0d1117;font-weight:600">
+                Gerencia Mina · Rajo Norte
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bloque inferior: Datos que completa el trabajador al iniciar turno -->
         <div class="grid-2">
           <div class="field-group">
-            <label class="field-label">Nombre del trabajador y cargo</label>
-            <div class="field-input" style="background:#f8fafc">Carlos Andrés Muñoz Rojas · Operador Camión Extracción</div>
-          </div>
-          <div class="field-group">
-            <label class="field-label">Código de empresa y área operativa</label>
-            <div class="field-input" style="background:#f8fafc">ANDES · Gerencia Operaciones Mina (Turno A)</div>
-          </div>
-          <div class="field-group">
-            <label class="field-label">Sistema de turno y jornada actual</label>
-            <div class="field-input" id="inp-shift">7x7 (7 días trabajo x 7 descanso) · Turno Diurno (Día 3 de 7)</div>
+            <label class="field-label">Sistema de turno y grupo al que perteneces (Ej: 7x7 Turno A o Turno B)</label>
+            <div class="field-input" id="inp-shift"></div>
           </div>
           <div class="field-group">
             <label class="field-label">Teléfono de contacto (coordinación preventiva)</label>
@@ -664,8 +695,8 @@
           </div>
         </div>
 
-        <div style="margin-top:24px;display:flex;justify-content:flex-end">
-          <button class="btn-primary" id="btn-step1">Confirmar datos y continuar al cuestionario →</button>
+        <div style="margin-top:20px;display:flex;justify-content:flex-end">
+          <button class="btn-primary" id="btn-step1">Confirmar turno y continuar al cuestionario →</button>
         </div>
       </div>
     </section>
@@ -822,9 +853,9 @@
           <div class="cert-row"><span>Empresa / Faena:</span><span>Minera Andes SpA [ANDES] · Rajo Norte</span></div>
           <div class="cert-row"><span>Código / Equipo Asignado:</span><span>Camión Extracción CAM-07 (3.420 hrs)</span></div>
           <div class="cert-row"><span>RUT Empresa:</span><span>76.543.210-K (Datos de ejemplo)</span></div>
-          <div class="cert-row"><span>Sistema de Turno:</span><span>7x7 Diurno · Día 3 del ciclo</span></div>
+          <div class="cert-row"><span>Sistema de Turno:</span><span>7x7 · Turno A (Día 3 del ciclo · Diurno)</span></div>
           <div class="cert-row"><span>Trabajador Evaluado:</span><span>Carlos Andrés Muñoz Rojas</span></div>
-          <div class="cert-row"><span>Línea Base Personal (3 días):</span><span>Completada (Promedio base: 93 / 100 pts)</span></div>
+          <div class="cert-row"><span>Cargo Registrado:</span><span>Operador Camión de Extracción</span></div>
         </div>
 
         <div class="cert-verdict" id="cert-verdict-box">
@@ -987,9 +1018,10 @@
   async function runChoreography() {
     // --- ESCENA 1: DATOS DE TURNO Y EQUIPO ---
     setStepBadge(1);
-    caption.innerHTML = '<strong>Paso 1 · Identificación:</strong> El trabajador ingresa con datos ficticios, registra teléfono, equipo a operar y confirma el aviso preventivo.';
+    caption.innerHTML = '<strong>Paso 1 · Confirmación de Turno:</strong> Nombre, cargo y código de empresa vienen precargados de la cuenta; el usuario indica su turno (7x7 Turno A) y equipo.';
     await sleep(900);
 
+    await typeText('inp-shift', '7x7 · Turno A (Jornada Diurna)', 34);
     await typeText('inp-phone', '+56 9 8412 3901', 38);
     await typeText('inp-equip', 'CAM-07 (Camión Extracción Komatsu)', 32);
     await typeText('inp-odo', '3.420 hrs', 45);
