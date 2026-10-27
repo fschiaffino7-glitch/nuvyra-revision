@@ -1,0 +1,1161 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demostración Real · Evaluación y Certificado NUVYRA</title>
+<style>
+  @font-face {
+    font-family: 'Source Sans 3';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/source-sans-3-latin-400-normal.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Source Sans 3';
+    font-style: normal;
+    font-weight: 500;
+    src: url('fonts/source-sans-3-latin-500-normal.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Source Sans 3';
+    font-style: normal;
+    font-weight: 700;
+    src: url('fonts/source-sans-3-latin-700-normal.woff2') format('woff2');
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+    background: #0d1117;
+    color: #0d1117;
+    user-select: none;
+    position: relative;
+  }
+
+  /* Barra superior explicativa de la etapa del video */
+  .stage-banner {
+    height: 76px;
+    background: #0d1117;
+    border-bottom: 1px solid #262c36;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    color: #ffffff;
+  }
+  .stage-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+  }
+  .stage-pill {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(29, 95, 191, 0.22);
+    color: #79b8ff;
+    border: 1px solid rgba(121, 184, 255, 0.35);
+    padding: 5px 12px;
+    border-radius: 4px;
+  }
+  .stage-steps {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .st-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #8b949e;
+    background: #161b22;
+    border: 1px solid #262c36;
+    transition: all 0.25s ease;
+  }
+  .st-item.active {
+    background: #1d5fbf;
+    color: #ffffff;
+    border-color: #388bfd;
+    font-weight: 700;
+    box-shadow: 0 0 0 3px rgba(29, 95, 191, 0.3);
+  }
+  .st-item.done {
+    background: #122d1f;
+    color: #56d364;
+    border-color: #238636;
+  }
+  .st-num {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+  }
+
+  /* Lienzo principal de la aplicación */
+  .viewport {
+    width: 1920px;
+    height: 1004px;
+    background: #f2f4f7;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  /* Cabecera interna de la app NUVYRA */
+  .app-nav {
+    height: 68px;
+    background: #ffffff;
+    border-bottom: 1px solid #d8dee4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 56px;
+  }
+  .app-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0d1117;
+  }
+  .app-user-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 16px;
+    color: #4b5563;
+  }
+  .badge-fict {
+    background: #eef2f7;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 4px;
+  }
+
+  /* Contenedor de escenas */
+  .scene-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 56px 96px;
+    position: relative;
+  }
+  .scene {
+    display: none;
+    width: 100%;
+    max-width: 1280px;
+    animation: fadeIn 0.25s ease;
+  }
+  .scene.active {
+    display: block;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0.4; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Tarjetas y formularios */
+  .card {
+    background: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 10px;
+    box-shadow: 0 8px 28px rgba(13, 17, 23, 0.06);
+    padding: 36px 44px;
+  }
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 20px;
+    margin-bottom: 26px;
+  }
+  .card-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0d1117;
+    letter-spacing: -0.02em;
+  }
+  .card-sub {
+    font-size: 18px;
+    color: #4b5563;
+    margin-top: 4px;
+  }
+  .step-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #1d5fbf;
+    background: #eef4fc;
+    border: 1px solid #bfd6f6;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .field-group {
+    margin-bottom: 18px;
+  }
+  .field-label {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 7px;
+  }
+  .field-input {
+    width: 100%;
+    height: 48px;
+    padding: 0 16px;
+    font-size: 18px;
+    font-family: inherit;
+    color: #0d1117;
+    background: #ffffff;
+    border: 2px solid #cbd5e1;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .field-input.focused {
+    border-color: #1d5fbf;
+    box-shadow: 0 0 0 4px rgba(29, 95, 191, 0.15);
+  }
+  .field-hint {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 5px;
+  }
+
+  .check-box-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    background: #f8fafc;
+    font-size: 17px;
+    color: #0d1117;
+    margin-top: 10px;
+    transition: all 0.15s;
+  }
+  .check-box-row.checked {
+    border-color: #1d5fbf;
+    background: #f0f6ff;
+  }
+  .check-square {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #64748b;
+    border-radius: 5px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #ffffff;
+    flex-shrink: 0;
+  }
+  .check-box-row.checked .check-square {
+    background: #1d5fbf;
+    border-color: #1d5fbf;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+    padding: 0 32px;
+    background: #1d5fbf;
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: 700;
+    border-radius: 7px;
+    border: none;
+    transition: transform 0.12s, background 0.15s;
+  }
+  .btn-primary.clicked {
+    background: #154691;
+    transform: scale(0.98);
+  }
+
+  /* Cuestionario de autopercepción */
+  .q-option-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .q-opt {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 16px;
+    border: 2px solid #d0d7de;
+    border-radius: 7px;
+    background: #ffffff;
+    font-size: 17px;
+    color: #1f2937;
+    transition: all 0.15s;
+  }
+  .q-opt.selected {
+    border-color: #1f7a4a;
+    background: #edf7f1;
+    color: #0f4c2a;
+    font-weight: 700;
+  }
+  .q-radio {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .q-opt.selected .q-radio {
+    border-color: #1f7a4a;
+    background: #1f7a4a;
+  }
+  .q-opt.selected .q-radio::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ffffff;
+  }
+
+  /* Escena 3: Concentración */
+  .test-shell {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .timer-bar-bg {
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 12px 0 8px;
+  }
+  .timer-bar-fill {
+    height: 100%;
+    background: #0d1117;
+    transition: width 0.2s linear;
+  }
+  .symbol-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .symbol-cell {
+    height: 108px;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 46px;
+    font-weight: 700;
+    color: #0d1117;
+    transition: all 0.15s;
+  }
+  .symbol-cell.hit {
+    border-color: #1f7a4a;
+    background: #dcfce7;
+    color: #14532d;
+    transform: scale(0.96);
+  }
+
+  /* Escena 4: Reacción */
+  .reaction-progress {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    gap: 4px;
+    margin: 14px 0 22px;
+  }
+  .rp-seg {
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 3px;
+  }
+  .rp-seg.done {
+    background: #0d1117;
+  }
+  .reaction-arena {
+    height: 330px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .reaction-circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    transition: transform 0.1s;
+  }
+  .reaction-circle.wait {
+    background: #e5e7eb;
+    color: #4b5563;
+    border: 3px dashed #9ca3af;
+  }
+  .reaction-circle.go {
+    background: #1f7a4a;
+    color: #ffffff;
+    box-shadow: 0 0 0 12px rgba(31, 122, 74, 0.18);
+  }
+  .reaction-circle.tapped {
+    background: #14532d;
+    color: #ffffff;
+    transform: scale(0.94);
+  }
+
+  /* Escena 6: Certificado PDF Oficial */
+  .cert-sheet {
+    background: #ffffff;
+    border: 2px solid #94a3b8;
+    border-radius: 6px;
+    box-shadow: 0 18px 48px rgba(13, 17, 23, 0.18);
+    padding: 28px 38px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .cert-top {
+    background: #f0f5ff;
+    border: 2px solid #1d5fbf;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .cert-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 32px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    padding: 14px 22px;
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+  .cert-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #e2e8f0;
+    padding-bottom: 4px;
+  }
+  .cert-row span:first-child { color: #475569; }
+  .cert-row span:last-child { font-weight: 700; color: #0d1117; }
+  .cert-verdict {
+    background: #eafaf1;
+    border: 2px solid #1f7a4a;
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  .cert-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+  .cert-table th {
+    background: #f1f5f9;
+    text-align: left;
+    padding: 9px 14px;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    font-weight: 700;
+  }
+  .cert-table td {
+    padding: 9px 14px;
+    border: 1px solid #cbd5e1;
+    color: #0d1117;
+  }
+  .cert-signatures {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+    margin-top: 12px;
+  }
+  .sig-box {
+    border: 1px solid #cbd5e1;
+    padding: 12px 16px;
+    text-align: center;
+    background: #fcfcfd;
+  }
+
+  /* Subtítulo narrativo inferior */
+  .caption-bar {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(13, 17, 23, 0.94);
+    color: #ffffff;
+    padding: 14px 32px;
+    border-radius: 8px;
+    border: 1px solid #30363d;
+    font-size: 21px;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+    white-space: nowrap;
+    z-index: 40;
+  }
+  .caption-bar strong {
+    color: #79b8ff;
+    font-weight: 700;
+  }
+
+  /* Cursor simulado */
+  #cursor {
+    position: fixed;
+    top: 500px;
+    left: 960px;
+    width: 34px;
+    height: 34px;
+    pointer-events: none;
+    z-index: 100;
+    transition: top 0.42s cubic-bezier(0.22, 1, 0.36, 1), left 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .click-ring {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 3px solid #1d5fbf;
+    background: rgba(29, 95, 191, 0.25);
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  .click-ring.boom {
+    animation: pulseClick 0.45s ease-out;
+  }
+  @keyframes pulseClick {
+    0% { opacity: 1; transform: scale(0.4); }
+    100% { opacity: 0; transform: scale(1.65); }
+  }
+</style>
+</head>
+<body>
+
+<header class="stage-banner">
+  <div class="stage-brand">
+    <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="10.4" fill="none" stroke="#ffffff" stroke-width="1.9"/>
+      <path d="M8.1 16.6V7.6L15.9 16.6V10.6" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="15.9" cy="7.2" r="2.2" fill="#388bfd"/>
+    </svg>
+    <span>NUVYRA · Recorrido Real del Trabajador</span>
+    <span class="stage-pill">Datos ficticios de demostración</span>
+  </div>
+  <div class="stage-steps">
+    <div class="st-item active" id="st-1"><span class="st-num">01</span> Identificación y Turno</div>
+    <div class="st-item" id="st-2"><span class="st-num">02</span> Cuestionario Personal</div>
+    <div class="st-item" id="st-3"><span class="st-num">03</span> Test Concentración</div>
+    <div class="st-item" id="st-4"><span class="st-num">04</span> Test Reacción</div>
+    <div class="st-item" id="st-5"><span class="st-num">05</span> Certificado Oficial</div>
+  </div>
+</header>
+
+<div class="viewport">
+  <div class="app-nav">
+    <div class="app-logo">
+      <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="10.4" fill="none" stroke="#0d1117" stroke-width="1.9"/>
+        <path d="M8.1 16.6V7.6L15.9 16.6V10.6" fill="none" stroke="#0d1117" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="15.9" cy="7.2" r="2.2" fill="#1d5fbf"/>
+      </svg>
+      <span>NUVYRA</span>
+      <span style="font-weight:400;color:#6b7280;font-size:17px;margin-left:8px">| Evaluación Preventiva Pre-Turno</span>
+    </div>
+    <div class="app-user-bar">
+      <span>Empresa: <strong>Minera Andes SpA [ANDES]</strong></span>
+      <span>·</span>
+      <span>Trabajador: <strong>Carlos Muñoz Rojas</strong></span>
+      <span class="badge-fict">Entorno de demostración</span>
+    </div>
+  </div>
+
+  <div class="scene-wrap">
+
+    <!-- ESCENA 1: INGRESO Y FICHA DE TURNO -->
+    <section class="scene active" id="scene-1">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="step-tag">Paso 1 de 5 · Identificación del operador</span>
+            <h1 class="card-title">Registro de Inicio de Jornada y Confirmación de Turno</h1>
+            <p class="card-sub">Antes de iniciar la evaluación diaria, el trabajador valida su turno, equipo asignado y aviso de uso preventivo.</p>
+          </div>
+          <div style="text-align:right;font-size:15px;color:#4b5563">
+            <div>Fecha: <strong>26/10/2026 · 07:42 hrs</strong></div>
+            <div>Faena: <strong>Operaciones Rajo Norte</strong></div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="field-group">
+            <label class="field-label">Nombre del trabajador y cargo</label>
+            <div class="field-input" style="background:#f8fafc">Carlos Andrés Muñoz Rojas · Operador Camión Extracción</div>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Código de empresa y área operativa</label>
+            <div class="field-input" style="background:#f8fafc">ANDES · Gerencia Operaciones Mina (Turno A)</div>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Sistema de turno y jornada actual</label>
+            <div class="field-input" id="inp-shift">7x7 (7 días trabajo x 7 descanso) · Turno Diurno (Día 3 de 7)</div>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Teléfono de contacto (coordinación preventiva)</label>
+            <div class="field-input" id="inp-phone"></div>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Código o patente del equipo a operar hoy</label>
+            <div class="field-input" id="inp-equip"></div>
+          </div>
+          <div class="field-group">
+            <label class="field-label">Horómetro / Kilometraje inicial del equipo</label>
+            <div class="field-input" id="inp-odo"></div>
+          </div>
+        </div>
+
+        <div class="check-box-row" id="chk-notice">
+          <div class="check-square" id="chk-notice-mark"></div>
+          <div>
+            <strong>Aviso a Trabajadores (Versión 2026-v1):</strong> Confirmo que esta evaluación tiene finalidad exclusivamente preventiva para cuidar mi seguridad en faena y no constituye diagnóstico médico ni causal disciplinaria.
+          </div>
+        </div>
+
+        <div style="margin-top:24px;display:flex;justify-content:flex-end">
+          <button class="btn-primary" id="btn-step1">Confirmar datos y continuar al cuestionario →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESCENA 2: CUESTIONARIO DE CÓMO SE SIENTE EL USUARIO -->
+    <section class="scene" id="scene-2">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <span class="step-tag">Paso 2 de 5 · Autopercepción del trabajador</span>
+            <h1 class="card-title">Cuestionario Previo: ¿Cómo te sientes hoy antes de iniciar turno?</h1>
+            <p class="card-sub">Declaración breve de descanso y condición física percibida antes de las pruebas cognitivas.</p>
+          </div>
+          <div style="background:#f8fafc;border:1px solid #cbd5e1;padding:10px 16px;border-radius:6px;font-size:15px">
+            Confidencial · Uso Preventivo HSE
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <div class="field-group">
+              <label class="field-label">1. ¿Cuántas horas dormiste en las últimas 24 horas?</label>
+              <div class="q-option-list">
+                <div class="q-opt" id="q1-a"><span class="q-radio"></span><span>Menos de 5 horas (descanso insuficiente)</span></div>
+                <div class="q-opt" id="q1-b"><span class="q-radio"></span><span>Entre 5 y 6,5 horas (descanso parcial)</span></div>
+                <div class="q-opt" id="q1-c"><span class="q-radio"></span><span>7,5 horas o más (descanso completo y continuo)</span></div>
+              </div>
+            </div>
+
+            <div class="field-group" style="margin-top:20px">
+              <label class="field-label">2. ¿Cómo evalúas la calidad de tu descanso anoche?</label>
+              <div class="q-option-list">
+                <div class="q-opt" id="q2-a"><span class="q-radio"></span><span>Dormí bien, sin interrupciones y me siento descansado</span></div>
+                <div class="q-opt" id="q2-b"><span class="q-radio"></span><span>Desperté varias veces o tuve dificultad para dormir</span></div>
+                <div class="q-opt" id="q2-c"><span class="q-radio"></span><span>Siento cansancio acumulado o pesadez al despertar</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="field-group">
+              <label class="field-label">3. ¿Cómo te sientes físicamente en este momento?</label>
+              <div class="q-option-list">
+                <div class="q-opt" id="q3-a"><span class="q-radio"></span><span>Me siento alerta, atento y en buenas condiciones físicas</span></div>
+                <div class="q-opt" id="q3-b"><span class="q-radio"></span><span>Presento dolor de cabeza, malestar físico o visión cansada</span></div>
+                <div class="q-opt" id="q3-c"><span class="q-radio"></span><span>Siento somnolencia importante o episodios de cabeceo</span></div>
+              </div>
+            </div>
+
+            <div class="field-group" style="margin-top:20px">
+              <label class="field-label">4. ¿Has tomado medicamentos que produzcan sueño o mareo?</label>
+              <div class="q-option-list">
+                <div class="q-opt" id="q4-a"><span class="q-radio"></span><span>No he tomado medicamentos con efecto sedante</span></div>
+                <div class="q-opt" id="q4-b"><span class="q-radio"></span><span>Sí, estoy en tratamiento con medicación que puede dar sueño</span></div>
+              </div>
+            </div>
+
+            <div class="field-group" style="margin-top:16px">
+              <label class="field-label">5. Comentario adicional (opcional)</label>
+              <div class="field-input" id="inp-qnote"></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:15px;color:#4b5563">Si declaras malestar o medicamentos sedantes, Prevención recibirá un aviso de apoyo preventivo.</span>
+          <button class="btn-primary" id="btn-step2">Guardar cuestionario e iniciar Test de Concentración →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESCENA 3: PRUEBA DE CONCENTRACIÓN -->
+    <section class="scene" id="scene-3">
+      <div class="card test-shell">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <div>
+            <span class="step-tag">Paso 3 de 5 · Primera prueba cognitiva</span>
+            <h1 class="card-title">1. Prueba de Concentración y Atención Visual</h1>
+          </div>
+          <div style="font-size:20px;font-weight:700;color:#1d5fbf" id="conc-counter">Pantalla 1 de 12 · Aciertos: 0</div>
+        </div>
+
+        <div class="timer-bar-bg">
+          <div class="timer-bar-fill" id="conc-timer" style="width:92%"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:17px;color:#4b5563;margin-bottom:10px">
+          <strong id="conc-msg" style="color:#0d1117;font-size:20px">Encuentra y toca el símbolo distinto antes de 5 segundos</strong>
+          <span id="conc-sec" style="font-variant-numeric:tabular-nums;font-weight:700">4.6 s</span>
+        </div>
+
+        <div class="symbol-grid" id="conc-grid">
+          <div class="symbol-cell">▲</div><div class="symbol-cell">▲</div><div class="symbol-cell">▲</div><div class="symbol-cell">▲</div>
+          <div class="symbol-cell">▲</div><div class="symbol-cell" id="odd-cell-1">●</div><div class="symbol-cell">▲</div><div class="symbol-cell">▲</div>
+          <div class="symbol-cell">▲</div><div class="symbol-cell">▲</div><div class="symbol-cell">▲</div><div class="symbol-cell">▲</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESCENA 4: PRUEBA DE REACCIÓN -->
+    <section class="scene" id="scene-4">
+      <div class="card test-shell">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <div>
+            <span class="step-tag">Paso 4 de 5 · Segunda prueba psicomotora</span>
+            <h1 class="card-title">2. Prueba de Velocidad de Reacción</h1>
+          </div>
+          <div style="font-size:20px;font-weight:700;color:#1d5fbf" id="reac-counter">Toque 18 de 20</div>
+        </div>
+
+        <div class="reaction-progress" id="reac-bars"></div>
+
+        <p style="font-size:19px;color:#4b5563">Toca el círculo central apenas cambie a color <strong>verde</strong>. Se mide tu mediana en milisegundos y lapsos de atención.</p>
+        <p id="reac-status" style="font-size:22px;font-weight:700;color:#0d1117;margin-top:8px">Espera el verde...</p>
+
+        <div class="reaction-arena">
+          <div class="reaction-circle wait" id="reac-circle">
+            <span id="reac-label">ESPERA</span>
+            <span id="reac-sub" style="font-size:16px;font-weight:500;margin-top:6px"></span>
+          </div>
+        </div>
+
+        <p id="reac-last" style="text-align:center;font-size:19px;font-weight:700;color:#1f7a4a;min-height:28px">
+          Último tiempo registrado: 245 ms · Mediana parcial: 248 ms
+        </p>
+      </div>
+    </section>
+
+    <!-- ESCENA 5: CERTIFICADO OFICIAL FINAL -->
+    <section class="scene" id="scene-5">
+      <div class="cert-sheet">
+        <div class="cert-top">
+          <div style="display:flex;align-items:center;gap:14px">
+            <svg width="38" height="38" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10.4" fill="none" stroke="#123873" stroke-width="1.9"/>
+              <path d="M8.1 16.6V7.6L15.9 16.6V10.6" fill="none" stroke="#123873" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="15.9" cy="7.2" r="2.2" fill="#1d5fbf"/>
+            </svg>
+            <div>
+              <div style="font-size:22px;font-weight:700;color:#123873;letter-spacing:-0.02em">
+                NUVYRA · CERTIFICADO OFICIAL DE EVALUACIÓN PREVENTIVA Y APTITUD
+              </div>
+              <div style="font-size:14px;color:#1d5fbf;font-weight:700">
+                SISTEMA DE ALERTA TEMPRANA DE FATIGA Y SOMNOLENCIA · NORMATIVA CHILENA (SUSESO / DS 132 SERNAGEOMIN)
+              </div>
+            </div>
+          </div>
+          <div style="text-align:right;font-size:14px">
+            <div style="font-weight:700;color:#123873;font-size:16px">FOLIO: CERT-FY-000418</div>
+            <div style="color:#475569">Emisión: 26/10/2026 · 07:45:12 CLST</div>
+          </div>
+        </div>
+
+        <div class="cert-meta-grid">
+          <div class="cert-row"><span>Empresa / Faena:</span><span>Minera Andes SpA [ANDES] · Rajo Norte</span></div>
+          <div class="cert-row"><span>Código / Equipo Asignado:</span><span>Camión Extracción CAM-07 (3.420 hrs)</span></div>
+          <div class="cert-row"><span>RUT Empresa:</span><span>76.543.210-K (Datos de ejemplo)</span></div>
+          <div class="cert-row"><span>Sistema de Turno:</span><span>7x7 Diurno · Día 3 del ciclo</span></div>
+          <div class="cert-row"><span>Trabajador Evaluado:</span><span>Carlos Andrés Muñoz Rojas</span></div>
+          <div class="cert-row"><span>Línea Base Personal (3 días):</span><span>Completada (Promedio base: 93 / 100 pts)</span></div>
+        </div>
+
+        <div class="cert-verdict" id="cert-verdict-box">
+          <div>
+            <div style="font-size:13px;font-weight:700;color:#14532d;text-transform:uppercase;letter-spacing:0.06em">Dictamen Preventivo de Inicio de Turno</div>
+            <div style="font-size:24px;font-weight:700;color:#14532d;margin-top:2px">
+              ● APTO PARA OPERACIÓN — NIVEL DE ALERTA NORMAL (VERDE)
+            </div>
+            <div style="font-size:15px;color:#166534;margin-top:2px">
+              El trabajador presenta niveles de atención visual, velocidad de reacción y autopercepción de descanso dentro de su rango habitual seguro.
+            </div>
+          </div>
+          <div style="text-align:right;background:#ffffff;border:2px solid #1f7a4a;border-radius:8px;padding:10px 20px">
+            <div style="font-size:13px;color:#475569;font-weight:700">SCORE GLOBAL</div>
+            <div style="font-size:34px;font-weight:700;color:#1f7a4a;line-height:1">94 <span style="font-size:18px;color:#64748b">/ 100</span></div>
+          </div>
+        </div>
+
+        <table class="cert-table">
+          <thead>
+            <tr>
+              <th>Dimensión Evaluada</th>
+              <th>Resultado Registrado</th>
+              <th>Parámetro de Referencia</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Cuestionario de Autopercepción</strong> (Sueño y Salud)</td>
+              <td>7,5 hrs de sueño · Descanso reparador · Sin medicamentos sedantes</td>
+              <td>Mínimo sugerido ≥ 6,5 hrs · Sin síntomas agudos</td>
+              <td style="color:#1f7a4a;font-weight:700">✓ Conforme</td>
+            </tr>
+            <tr>
+              <td><strong>2. Test Objetivo de Concentración</strong> (Atención Visual)</td>
+              <td><strong>96 / 100 pts</strong> · 12 de 12 pantallas correctas (Promedio: 690 ms)</td>
+              <td>Comparado con línea base individual (93 pts)</td>
+              <td style="color:#1f7a4a;font-weight:700">● Normal (+3%)</td>
+            </tr>
+            <tr>
+              <td><strong>3. Test Objetivo de Reacción</strong> (Vigilancia Psicomotora)</td>
+              <td><strong>92 / 100 pts</strong> · Mediana: <strong>248 ms</strong> · 0 lapsos (&gt;500 ms)</td>
+              <td>Umbral normal ≤ 350 ms · Sin lapsos críticos</td>
+              <td style="color:#1f7a4a;font-weight:700">● Normal (Óptimo)</td>
+            </tr>
+            <tr>
+              <td><strong>4. Verificación Preuso Equipo CAM-07</strong> (DS 132)</td>
+              <td>Frenos, dirección, neumáticos, luces y pértiga en estado Bien</td>
+              <td>0 fallas críticas registradas · Folio CHK-000418</td>
+              <td style="color:#1f7a4a;font-weight:700">✓ Equipo Operativo</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="cert-signatures">
+          <div class="sig-box">
+            <div style="font-size:13px;color:#1d5fbf;font-weight:700">FIRMA DIGITAL TRABAJADOR</div>
+            <div style="font-size:15px;font-weight:700;margin-top:6px">Carlos Andrés Muñoz Rojas</div>
+            <div style="font-size:13px;color:#64748b">Sesión autenticada · 26/10/2026 07:45</div>
+          </div>
+          <div class="sig-box">
+            <div style="font-size:13px;color:#1d5fbf;font-weight:700">VALIDACIÓN JEFATURA / HSE</div>
+            <div style="font-size:15px;font-weight:700;margin-top:6px">Supervisión Turno A · Rajo Norte</div>
+            <div style="font-size:13px;color:#64748b">Recepción automática en panel NUVYRA</div>
+          </div>
+          <div class="sig-box">
+            <div style="font-size:13px;color:#1d5fbf;font-weight:700">INTEGRIDAD Y TRAZABILIDAD</div>
+            <div style="font-size:14px;font-weight:700;margin-top:6px;font-family:monospace">SHA-256: 9F4A8C2E1B7D03E5</div>
+            <div style="font-size:13px;color:#64748b">Respaldo inmutable · Ley 16.744 / Ley 19.628</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Barra de subtítulo explicativo -->
+  <div class="caption-bar" id="caption">
+    <strong>Paso 1:</strong> El trabajador ingresa sus datos de turno, código del equipo a operar y confirma el aviso preventivo.
+  </div>
+</div>
+
+<!-- Cursor animado -->
+<div id="cursor">
+  <div class="click-ring" id="click-ring"></div>
+  <svg width="34" height="34" viewBox="0 0 28 28" fill="none">
+    <path d="M5 3L23 13.5L14.5 16L19 24L15.5 25.5L11 17.5L5 22V3Z" fill="#0d1117" stroke="#ffffff" stroke-width="2.2" stroke-linejoin="round"/>
+  </svg>
+</div>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('click-ring');
+  const caption = document.getElementById('caption');
+
+  function moveCursorTo(el, offsetX = 0, offsetY = 0) {
+    const r = el.getBoundingClientRect();
+    const x = r.left + r.width / 2 + offsetX;
+    const y = r.top + r.height / 2 + offsetY;
+    cursor.style.left = x + 'px';
+    cursor.style.top = y + 'px';
+  }
+
+  function clickEffect() {
+    ring.classList.remove('boom');
+    void ring.offsetWidth;
+    ring.classList.add('boom');
+  }
+
+  function setStepBadge(n) {
+    for (let i = 1; i <= 5; i++) {
+      const el = document.getElementById('st-' + i);
+      el.classList.remove('active', 'done');
+      if (i < n) el.classList.add('done');
+      if (i === n) el.classList.add('active');
+    }
+    for (let i = 1; i <= 5; i++) {
+      const sc = document.getElementById('scene-' + i);
+      sc.classList.toggle('active', i === n);
+    }
+  }
+
+  // Inicializar barras de reacción
+  const reacBars = document.getElementById('reac-bars');
+  for (let i = 0; i < 20; i++) {
+    const d = document.createElement('div');
+    d.className = 'rp-seg' + (i < 17 ? ' done' : '');
+    d.id = 'rp-' + i;
+    reacBars.appendChild(d);
+  }
+
+  // Función expuesta para que Playwright pueda controlar cada fotograma con precisión
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+  async function typeText(id, text, speed = 42) {
+    const el = document.getElementById(id);
+    moveCursorTo(el, -80, 0);
+    await sleep(420);
+    clickEffect();
+    el.classList.add('focused');
+    el.textContent = '';
+    for (const ch of text) {
+      el.textContent += ch;
+      await sleep(speed);
+    }
+    await sleep(180);
+    el.classList.remove('focused');
+  }
+
+  async function selectOption(id) {
+    const el = document.getElementById(id);
+    moveCursorTo(el, -120, 0);
+    await sleep(460);
+    clickEffect();
+    el.classList.add('selected');
+    await sleep(320);
+  }
+
+  async function runChoreography() {
+    // --- ESCENA 1: DATOS DE TURNO Y EQUIPO ---
+    setStepBadge(1);
+    caption.innerHTML = '<strong>Paso 1 · Identificación:</strong> El trabajador ingresa con datos ficticios, registra teléfono, equipo a operar y confirma el aviso preventivo.';
+    await sleep(900);
+
+    await typeText('inp-phone', '+56 9 8412 3901', 38);
+    await typeText('inp-equip', 'CAM-07 (Camión Extracción Komatsu)', 32);
+    await typeText('inp-odo', '3.420 hrs', 45);
+
+    const chk = document.getElementById('chk-notice');
+    const chkMark = document.getElementById('chk-notice-mark');
+    moveCursorTo(chkMark, 0, 0);
+    await sleep(480);
+    clickEffect();
+    chk.classList.add('checked');
+    chkMark.textContent = '✓';
+    await sleep(650);
+
+    const btn1 = document.getElementById('btn-step1');
+    moveCursorTo(btn1);
+    await sleep(480);
+    clickEffect();
+    btn1.classList.add('clicked');
+    await sleep(350);
+
+    // --- ESCENA 2: CUESTIONARIO DE CÓMO SE SIENTE ---
+    setStepBadge(2);
+    caption.innerHTML = '<strong>Paso 2 · Cuestionario Personal:</strong> El trabajador responde cómo durmió, cómo se siente físicamente y si toma medicamentos.';
+    await sleep(800);
+
+    await selectOption('q1-c');
+    await selectOption('q2-a');
+    await selectOption('q3-a');
+    await selectOption('q4-a');
+    await typeText('inp-qnote', 'Descanso completo en campamento, sin novedades.', 28);
+    await sleep(500);
+
+    const btn2 = document.getElementById('btn-step2');
+    moveCursorTo(btn2);
+    await sleep(480);
+    clickEffect();
+    btn2.classList.add('clicked');
+    await sleep(380);
+
+    // --- ESCENA 3: CONCENTRACIÓN ---
+    setStepBadge(3);
+    caption.innerHTML = '<strong>Paso 3 · Test de Concentración:</strong> 12 cuadrículas de 5 segundos donde debe encontrar y tocar el símbolo distinto.';
+    const concCounter = document.getElementById('conc-counter');
+    const concTimer = document.getElementById('conc-timer');
+    const concSec = document.getElementById('conc-sec');
+    const concMsg = document.getElementById('conc-msg');
+    const concGrid = document.getElementById('conc-grid');
+
+    // Ronda 1
+    await sleep(650);
+    concTimer.style.width = '78%';
+    concSec.textContent = '3.9 s';
+    const odd1 = document.getElementById('odd-cell-1');
+    moveCursorTo(odd1);
+    await sleep(520);
+    clickEffect();
+    odd1.classList.add('hit');
+    concMsg.innerHTML = '<span style="color:#1f7a4a">✓ Correcto (680 ms)</span>';
+    concCounter.textContent = 'Pantalla 1 de 12 · Aciertos: 1';
+    await sleep(850);
+
+    // Ronda 6
+    concCounter.textContent = 'Pantalla 6 de 12 · Aciertos: 5';
+    concMsg.textContent = 'Encuentra y toca el símbolo distinto antes de 5 segundos';
+    concTimer.style.width = '90%';
+    concSec.textContent = '4.5 s';
+    concGrid.innerHTML = `
+      <div class="symbol-cell">■</div><div class="symbol-cell">■</div><div class="symbol-cell">■</div><div class="symbol-cell">■</div>
+      <div class="symbol-cell">■</div><div class="symbol-cell">■</div><div class="symbol-cell">■</div><div class="symbol-cell">■</div>
+      <div class="symbol-cell">■</div><div class="symbol-cell">■</div><div class="symbol-cell" id="odd-cell-2">◆</div><div class="symbol-cell">■</div>
+    `;
+    await sleep(550);
+    concTimer.style.width = '74%';
+    concSec.textContent = '3.7 s';
+    const odd2 = document.getElementById('odd-cell-2');
+    moveCursorTo(odd2);
+    await sleep(520);
+    clickEffect();
+    odd2.classList.add('hit');
+    concMsg.innerHTML = '<span style="color:#1f7a4a">✓ Correcto (710 ms)</span>';
+    concCounter.textContent = 'Pantalla 6 de 12 · Aciertos: 6';
+    await sleep(850);
+
+    // Ronda 12
+    concCounter.textContent = 'Pantalla 12 de 12 · Aciertos: 11';
+    concMsg.textContent = 'Última cuadrícula: toca el símbolo distinto';
+    concTimer.style.width = '88%';
+    concSec.textContent = '4.4 s';
+    concGrid.innerHTML = `
+      <div class="symbol-cell">●</div><div class="symbol-cell">●</div><div class="symbol-cell" id="odd-cell-3">▲</div><div class="symbol-cell">●</div>
+      <div class="symbol-cell">●</div><div class="symbol-cell">●</div><div class="symbol-cell">●</div><div class="symbol-cell">●</div>
+      <div class="symbol-cell">●</div><div class="symbol-cell">●</div><div class="symbol-cell">●</div><div class="symbol-cell">●</div>
+    `;
+    await sleep(550);
+    concTimer.style.width = '76%';
+    concSec.textContent = '3.8 s';
+    const odd3 = document.getElementById('odd-cell-3');
+    moveCursorTo(odd3);
+    await sleep(520);
+    clickEffect();
+    odd3.classList.add('hit');
+    concMsg.innerHTML = '<span style="color:#1f7a4a">✓ Prueba de Concentración completada: 12 de 12 aciertos (96 pts)</span>';
+    concCounter.textContent = 'Pantalla 12 de 12 · Aciertos: 12';
+    await sleep(1100);
+
+    // --- ESCENA 4: VELOCIDAD DE REACCIÓN ---
+    setStepBadge(4);
+    caption.innerHTML = '<strong>Paso 4 · Test de Reacción:</strong> El trabajador espera a que el círculo se ponga verde (TOCA) y presiona de inmediato.';
+    const rCircle = document.getElementById('reac-circle');
+    const rLabel = document.getElementById('reac-label');
+    const rSub = document.getElementById('reac-sub');
+    const rStatus = document.getElementById('reac-status');
+    const rCounter = document.getElementById('reac-counter');
+    const rLast = document.getElementById('reac-last');
+
+    moveCursorTo(rCircle, 0, 15);
+    await sleep(950);
+
+    const taps = [
+      { n: 18, ms: 242, idx: 17 },
+      { n: 19, ms: 251, idx: 18 },
+      { n: 20, ms: 248, idx: 19 }
+    ];
+
+    for (const t of taps) {
+      rCounter.textContent = `Toque ${t.n} de 20`;
+      rCircle.className = 'reaction-circle wait';
+      rLabel.textContent = 'ESPERA';
+      rSub.textContent = 'No toques antes';
+      rStatus.textContent = 'Espera el verde...';
+      await sleep(900);
+
+      rCircle.className = 'reaction-circle go';
+      rLabel.textContent = 'TOCA';
+      rSub.textContent = '¡Ahora!';
+      rStatus.textContent = '¡Ahora! Toca el círculo verde';
+      await sleep(320);
+
+      clickEffect();
+      rCircle.className = 'reaction-circle tapped';
+      rLabel.textContent = `${t.ms} ms`;
+      rSub.textContent = 'Registrado';
+      document.getElementById('rp-' + t.idx).classList.add('done');
+      rLast.textContent = `Último tiempo registrado: ${t.ms} ms · Mediana: 248 ms · 0 lapsos (>500 ms)`;
+      await sleep(750);
+    }
+
+    rStatus.innerHTML = '<span style="color:#1f7a4a">✓ Evaluación finalizada · Calculando puntaje y emitiendo certificado oficial...</span>';
+    await sleep(1100);
+
+    // --- ESCENA 5: CERTIFICADO OFICIAL FINAL ---
+    setStepBadge(5);
+    caption.innerHTML = '<strong>Paso 5 · Certificado Oficial Emitido:</strong> Resumen de cuestionario, pruebas objetivas, dictamen de aptitud y firma digital.';
+    const verdict = document.getElementById('cert-verdict-box');
+    moveCursorTo(verdict, 180, 0);
+    await sleep(1800);
+    moveCursorTo(document.querySelector('.cert-table'), 0, 10);
+    await sleep(2200);
+    moveCursorTo(document.querySelector('.cert-signatures'), 0, 0);
+    await sleep(2600);
+    window.__demoFinished = true;
+  }
+
+  window.addEventListener('load', () => {
+    setTimeout(runChoreography, 400);
+  });
+</script>
+</body>
+</html>
